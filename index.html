@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8">
+	<title>Dashboard</title>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Your site name" />
+	<meta property="og:description" content="Some description text" />
+	<meta property="og:url" content="" />
+	<meta property="og:image" content="img/.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="180"> <!-- size of og:image -->
+	<meta property="og:site_name" content="">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="description" content="" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/slick.css" />
+	<!-- <link rel="stylesheet" href="css/dataTables.min.css" /> -->
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+	<header class="dashboard__header">
+		<div class="dashboard__hamburger">
+			<div class="dashboard__hamburger_inner">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<a href="javascript:void(0);" class="dashboard__logo">
+			<img src="img/logo-icon.svg" alt="">
+		</a>
+
+		<div class="dashboard__search">
+			<div class="dashboard__search_icon">
+				<img src="img/search-icon.svg" alt="">
+			</div>
+			<form action="" class="dashboard__search_form">
+				<input type="search" name="serch" id="search" placeholder="Search for a mail">
+			</form>
+		</div>
+
+		<ul class="dashboard__actions">
+			<li>
+				<a href="javascript:void(0);" class="notes__link note__info_box_link">
+					<img src="img/bell-icon.svg" alt="notes">
+					<span class="notes__count">5</span>
+				</a>
+				<div class="note__info_box notice">
+					<div class="note__info_box_inner">
+						<div class="note__info_box_inner_header">
+							<h6 class="note__info_box_title">2 New Notifications</h6>
+							<a href="javascript:void(0);" class="note__info_box_clear">Clear All</a>
+						</div>
+						<div class="note__info_box_inner_body">
+							<ul class="note__info_list">
+								<li>
+									<div class="note__info_item">
+										<a href="javascript:void(0);" class="note__info_item_link"></a>
+										<div class="note__info_item_icon">
+											<img src="img/bell-icon.svg" alt="note">
+										</div>
+										<div class="note__info_item_text">
+											<h6 class="note__info_item_text_title">Order #43253 Delivered</h6>
+											<p>Updated at 9:00 AM on 10/07/2020. See more <a href="javascript:void(0);">here</a></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="note__info_item">
+										<a href="javascript:void(0);" class="note__info_item_link"></a>
+										<div class="note__info_item_icon">
+											<img src="img/bell-icon.svg" alt="note">
+										</div>
+										<div class="note__info_item_text">
+											<h6 class="note__info_item_text_title">Training reminder</h6>
+											<p>Updated at 9:00 AM on 10/07/2020. See more <a href="javascript:void(0);">here</a></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="note__info_item viewed">
+										<a href="javascript:void(0);" class="note__info_item_link"></a>
+										<div class="note__info_item_icon">
+											<img src="img/bell-icon.svg" alt="note">
+										</div>
+										<div class="note__info_item_text">
+											<h6 class="note__info_item_text_title">Order #46538 Resived</h6>
+											<p>Updated at 9:00 AM on 10/07/2020. See more <a href="javascript:void(0);">here</a></p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="note__info_item viewed">
+										<a href="javascript:void(0);" class="note__info_item_link"></a>
+										<div class="note__info_item_icon">
+											<img src="img/bell-icon.svg" alt="note">
+										</div>
+										<div class="note__info_item_text">
+											<h6 class="note__info_item_text_title">Order #43253 Delivered</h6>
+											<p>Updated at 9:00 AM on 10/07/2020. See more <a href="javascript:void(0);">here</a></p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<a href="javascript:void(0);" class="client__link note__info_box_link">
+					<span class="client__link_avatar">
+						<span style="background-image: url('img/avatar.jpg')"></span>
+					</span>
+					<span class="client__link_text">Charles Tran</span>
+				</a>
+				<div class="note__info_box client">
+					<div class="note__info_box_inner">
+						<div class="note__info_box_inner_body">
+							<ul class="note__info_list">
+								<li><a href="javascript:void(0);">Settings</a></li>
+								<li><a href="javascript:void(0);">Log out</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+	</header>
+
+
+	<nav class="dashboard__nav">
+		<div class="dashboard__nav_inner">
+			<ul class="dashboard__menu">
+				<li class="active">
+					<a href="javascript:void(0);">
+						<img src="img/nav-home-icon.svg" alt="home">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<img src="img/nav-tiles-icon.svg" alt="categories">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<img src="img/nav-track-icon.svg" alt="delivery">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<img src="img/nav-doc-icon.svg" alt="doc">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<img src="img/nav-faq-icon.svg" alt="faq">
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);">
+						<img src="img/nav-settings-icon.svg" alt="settings">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+<div class="dashboard__content">
+	
+	<div class="components__grid columns-5">
+
+		<div class="components__grid_column">
+			<div class="info__box simple__type">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="info__unit_simple">
+						<div class="info__unit_simple_text">
+							<h2 class="title">251</h2>
+							<h5 class="subtitle">Customers</h5>
+							<p class="text"><span class="state up"><i></i> 2.65%</span> since last week</p>
+						</div>
+						<div class="info__unit_simple_icon">
+							<div class="info__unit_simple_icon_inner">
+								<img src="img/users-icon.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box simple__type">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="info__unit_simple">
+						<div class="info__unit_simple_text">
+							<h2 class="title">345</h2>
+							<h5 class="subtitle">Open Tasks</h5>
+							<p class="text">2 with deadlines today</p>
+						</div>
+						<div class="info__unit_simple_icon">
+							<div class="info__unit_simple_icon_inner">
+								<img src="img/clock-icon.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box simple__type">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="info__unit_simple">
+						<div class="info__unit_simple_text">
+							<h2 class="title">14</h2>
+							<h5 class="subtitle">Cloth Issues</h5>
+							<p class="text"><span class="state down"><i></i> 2.65%</span> since last week</p>
+						</div>
+						<div class="info__unit_simple_icon">
+							<div class="info__unit_simple_icon_inner">
+								<img src="img/paper-curved-icon.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box simple__type">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="info__unit_simple">
+						<div class="info__unit_simple_text">
+							<h2 class="title">9</h2>
+							<h5 class="subtitle">Orders On Hold</h5>
+							<p class="text">Sept 7, 2020 since last week</p>
+						</div>
+						<div class="info__unit_simple_icon">
+							<div class="info__unit_simple_icon_inner">
+								<img src="img/clock-sqare-icon.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box simple__type">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="info__unit_simple">
+						<div class="info__unit_simple_text">
+							<h2 class="title">51</h2>
+							<h5 class="subtitle">Orders In Alteration</h5>
+							<p class="text">Sept 25, 2020 since last week</p>
+						</div>
+						<div class="info__unit_simple_icon">
+							<div class="info__unit_simple_icon_inner">
+								<img src="img/users-icon.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="components__grid columns-2">
+
+		<div class="components__grid_column">
+			<div class="info__box chart__type">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Financials</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<a href="javascript:void(0);" class="refresh">
+								<img src="img/refresh-icon.svg" alt="refresh">
+							</a>
+						</li>
+						<li>
+							<a href="#this__window" class="more modal__open">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					<div class="info__box_body_chart">
+						<div id="financials__chart_alt"></div>
+					</div>
+					<div class="info__box_body_chart_info_wrapper">
+						<div class="info__box_body_chart_info"></div>
+						<div class="info__box_body_chart_legends"></div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box chart__type_circle">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Sales Split by Location</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<a href="javascript:void(0);" class="refresh">
+								<img src="img/refresh-icon.svg" alt="refresh">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="more">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					<div class="info__box_body_left">
+						
+					</div>
+					<div class="info__box_body_right">
+						<div class="info__box_body_chart">
+							<div id="sales__split_location"></div>
+						</div>
+						<div class="info__box_body_chart_info_wrapper">
+							<div class="info__box_body_chart_info"></div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<div class="components__grid columns-2 sortable">
+		
+		<div class="components__grid_column">
+			<div class="info__box">
+				<div class="info__box_header"></div>
+				<div class="info__box_body">
+					<div class="incoming__info_unit">
+						<div class="incoming__info_unit_left">
+							<div class="incoming__info_unit_icon">
+								<img src="img/incoming-icon.png" alt="">
+							</div>
+						</div>
+						<div class="incoming__info_unit_right">
+							<h2 class="incoming__info_unit_title">Hello!</h2>
+							<div class="incoming__info_unit_slider_wrapper">
+								<div class="incoming__info_unit_slider">
+									<div class="slide__item">
+										<div class="slide__item_inner">
+											<h5 class="incoming__info_unit_message">You have an update for <span>6 orders.</span></h5>
+											<a href="javascript:void(0);" class="btn btn-orange">Check orders</a>
+										</div>
+									</div>
+									<div class="slide__item">
+										<div class="slide__item_inner">
+											<h5 class="incoming__info_unit_message"><span>3 meetings</span> scheduled for today.</span></h5>
+											<a href="javascript:void(0);" class="btn btn-orange">See meetings</a>
+										</div>
+									</div>
+									<div class="slide__item">
+										<div class="slide__item_inner">
+											<h5 class="incoming__info_unit_message">You have <span>1 training video</span> to watch.  </h5>
+											<a href="javascript:void(0);" class="btn btn-orange">Watch videos</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+		<div class="components__grid_column">
+			<div class="info__box">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Financials</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<a href="javascript:void(0);" class="more">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					<div id="financials__chart"></div>
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Production</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<a href="javascript:void(0);" class="refresh">
+								<img src="img/refresh-icon.svg" alt="refresh">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="more">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					
+					<table class="table__sort">
+						<thead>
+							<tr>
+								<th><span>Order</span></th>
+								<th class="no-sort"><span>Customer</span></th>
+								<th class="no-sort"><span>Update</span></th>
+								<th><span>Time</span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>43234</td>
+								<td>Ian Meiers</td>
+								<td>Production Photos Available</td>
+								<td>3:07 pm  10/7/2020</td>
+							</tr>
+							<tr>
+								<td>43289</td>
+								<td>Jo Bloggs</td>
+								<td>Toile Sent</td>
+								<td>5:36 pm  10/6/2020</td>
+							</tr>
+							<tr>
+								<td>43789</td>
+								<td>Paul Parker</td>
+								<td>Order Sent</td>
+								<td>10:25 am  10/6/2020</td>
+							</tr>
+							<tr>
+								<td>43790</td>
+								<td>Fred Perry</td>
+								<td>Production Photos Available</td>
+								<td>9:00 am  10/6/2020</td>
+							</tr>
+							<tr>
+								<td>43798</td>
+								<td>Fred Perry</td>
+								<td>Toile Sent</td>
+								<td>5:55 pm  10/5/2020</td>
+							</tr>
+						</tbody>
+						<tfoot></tfoot>
+					</table>
+
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Task List</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<select name="task__filters" id="task__filters">
+								<option value="title">This Day</option>
+								<option value="time">This Week</option>
+								<option value="title">This Month</option>
+								<option value="title">This Quarter</option>
+							</select>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="refresh">
+								<img src="img/refresh-icon.svg" alt="refresh">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="more">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					<div class="tasks__unit">
+						<div class="tasks__unit_header">
+							<div class="tasks__unit_progress">
+								<div class="tasks__unit_progress_top">
+									<span class="tasks__unit_date"></span>
+									<span class="tasks__unit_status"><span class="done"></span>/<span class="total"></span> tasks completed</span>
+								</div>
+								<div class="tasks__unit_progress_bottom">
+									<div class="tasks__unit_progress_line">
+										<span class="tasks__unit_progress_line_fill"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tasks__unit_body">
+							<div class="tasks__unit_creature">
+								<input type="text" name="new__task_name" placeholder="Create a new task">
+								<a href="javascript:void(0);" class="btn btn-orange tasks__unit_creature_submit">Add task</a>
+							</div>
+							<div class="tasks__unit_list_wrapper">
+								<ul class="tasks__unit_list">
+									<li class="tasks__unit_list_item urgent">
+										<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+										<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+										<span class="tasks__unit_list_item_time">9:36 pm</span>
+										<span class="tasks__unit_list_item_status">Urgent</span>
+									</li>
+									<li class="tasks__unit_list_item new">
+										<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+										<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+										<span class="tasks__unit_list_item_time">9:36 pm</span>
+										<span class="tasks__unit_list_item_status">New</span>
+									</li>
+									<li class="tasks__unit_list_item done">
+										<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+										<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+										<span class="tasks__unit_list_item_time">9:36 pm</span>
+										<span class="tasks__unit_list_item_status">Done</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+		<div class="components__grid_column">
+			<div class="info__box">
+				<div class="info__box_header">
+					<h4 class="info__box_header_title">Customers To Contact</h4>
+					<ul class="info__box_header_actions_list inline">
+						<li>
+							<a href="javascript:void(0);" class="refresh">
+								<img src="img/refresh-icon.svg" alt="refresh">
+							</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="more">
+								<img src="img/more-dots-icon.svg" alt="more">
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info__box_body">
+					
+					<table class="table__sort">
+						<thead>
+							<tr>
+								<th class="no-sort"><span>Customer</span></th>
+								<th><span>Last Purchase</span></th>
+								<th><span>Last Contact</span></th>
+								<th><span>Spend</span></th>
+								<th class="no-sort"><span>Note</span></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Ian Meiers</td>
+								<td>20 h ago</td>
+								<td>40 min ago</td>
+								<td>$ 43000</td>
+								<td>Wants a blue suit</td>
+							</tr>
+							<tr>
+								<td>Jo Bloggs</td>
+								<td>1 day ago</td>
+								<td>1 day ago</td>
+								<td>$ 12000</td>
+								<td>Interested in tweed</td>
+							</tr>
+							<tr>
+								<td>Paul Parker</td>
+								<td>35 day ago</td>
+								<td>1 month ago</td>
+								<td>$ 9000</td>
+								<td>Wants a red suit</td>
+							</tr>
+							<tr>
+								<td>Paul Parker</td>
+								<td>35 day ago</td>
+								<td>1 month ago</td>
+								<td>$ 45000</td>
+								<td>Interested in tweed</td>
+							</tr>
+							<tr>
+								<td>Paul Parker</td>
+								<td>1 month ago</td>
+								<td>32 day ago</td>
+								<td>$ 5700</td>
+								<td>Wants a green suit</td>
+							</tr>
+						</tbody>
+						<tfoot></tfoot>
+					</table>
+
+				</div>
+				<div class="info__box_footer"></div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<!-- <div class="components__grid sortable">
+	<div class="sortable__grid_column" data-id="1">
+		<div class="sortable__grid_box item smallest" style="background: #FD7E14">
+			<select name="" id="">
+				<option value="1">Value 1</option>
+				<option value="2">Value 2</option>
+			</select>
+		</div>
+	</div>
+	<div class="sortable__grid_column" data-id="2">
+		<div class="sortable__grid_box item smaller" style="background: #15AABF;"></div>
+	</div>
+	<div class="sortable__grid_column" data-id="3">
+		<div class="sortable__grid_box item" style="background: #82C91E;"></div>
+	</div>
+	<div class="sortable__grid_column" data-id="4">
+		<div class="sortable__grid_box item" style="background: #dc3545;"></div>
+	</div>
+	<div class="sortable__grid_column" data-id="5">
+		<div class="sortable__grid_box item" style="background: #ffc107;"></div>
+	</div>
+</div> -->
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="modal__window" id="this__window">
+	<div class="modal__window_overlay"></div>
+	<div class="modal__window_content">
+		<button class="modal__window_close">
+			<span class="modal__window_close_icon">
+				<span class="modal__window_close_icon_line"></span>
+				<span class="modal__window_close_icon_line"></span>
+			</span>
+		</button>
+		<div class="modal__window_content_inner">
+			<div class="modal__window_content_inner_header">
+				<h3 class="title">Delete Messages</h3>
+				<p>Are you sure you want to delete all ealier messages?</p>
+			</div>
+			<div class="modal__window_content_inner_body">
+				<ul class="buttons__list">
+					<li><a href="javascript:void(0);" class="btn btn-light">Cancel</a></li>
+					<li><a href="javascript:void(0);" class="btn btn-red">Delete</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/web-animations.min.js"></script>
+	<script src="js/muuri.min.js"></script>
+	<script src="js/formstyler.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/dataTables.min.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-more.js"></script>
+	<script src="js/highcharts-solidgauge.js"></script>
+	<script src="js/moment.min.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
