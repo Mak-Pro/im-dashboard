@@ -357,6 +357,7 @@
 		}
 
 		if($('#financials__chart_alt').length) {
+
 			let areaLineChart = Highcharts.chart('financials__chart_alt', {
 				chart: {
 					type: 'areaspline',
@@ -574,7 +575,58 @@
 						fillColor: '#ffdd99',
 					},
 				}]
+			});	
+
+		
+
+			// console.log();
+
+			// areaLineChart.series[0].update({
+			// 	data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+			// }, false);
+
+
+			$('.redraw__finalt').on('click',function() {
+
+				areaLineChart.series[0].update({
+					data: [25574, 
+								 49678,
+								 69699,
+								 10333,
+								 46555,
+								 90222,
+								 45000,
+								 28000,
+								 49900,
+								 30000,
+								 12000,
+								 84000,
+								 24687,
+								 20444,
+								 20200,
+								 57000,
+								 60000,
+								 77545,
+								 85000,
+								 95000,
+								 30777,
+								 29333,
+								 11556,
+								 43333,
+								 40000,
+								 42000,
+								 45000,
+								 48000,
+								 52000,
+								 58000,
+								 59000]
+				});
+
+				areaLineChart.redraw();
 			});
+
+
+
 		}
 		
 
