@@ -68,6 +68,12 @@
 
 
 
+	if($('.dashboard__content').length) {
+		$('html').stop().addClass('dashboard__html');
+	}
+
+
+
 
 
 
@@ -93,12 +99,13 @@
 		$('.dashboard__hamburger').on('click', function() {
 			$(this).stop().toggleClass('active');
 			$('.dashboard__nav').stop().toggleClass('show');
-			$('.dashboard__content').stop().toggleClass('resized');
+			$('.dashboard__content, .dashboard__header').stop().toggleClass('resized');
 			setTimeout(function() {
 				grid.refreshItems();
 				grid.refreshSortData();
 				grid.layout();
 				saveLayout(grid);
+				$('.incoming__info_unit_slider').slick('setPosition');
 			}, 400);
 		});
 
