@@ -1,12 +1,6 @@
 (function( $ ) {
 
 
-	/* ---------- global variables ---------- */
-
-	let verticalColumnChartHeight = null;
-
-
-
 	function serializeLayout(grid) {
 		var itemIds = grid.getItems().map(function (item) {
 			return item.getElement().getAttribute('data-id');
@@ -14,12 +8,12 @@
 		return JSON.stringify(itemIds);
 	}
 
-	function saveLayout(grid) {
+	function saveLayout(key, grid) {
 		var layout = serializeLayout(grid);
-		window.localStorage.setItem('layout', layout);
+		window.localStorage.setItem(key, layout);
 	}
 
-	function loadLayout(grid, serializedLayout) {
+	function loadLayout(key, grid, serializedLayout) {
 		var layout = JSON.parse(serializedLayout);
 		var currentItems = grid.getItems();
 		var currentItemIds = currentItems.map(function (item) {
@@ -41,29 +35,47 @@
 	}
 
 
-	let grid;
+
 	function initGrid() {
-		grid = new Muuri('.components__grid.sortable', {
-			dragEnabled: true,
-			dragSort : true,
-			layoutOnInit: true,
-			layoutOnResize : 100,
-			alignRight: false,
-			alignBottom: false,
-			rounding: false,
-		}).on('move', function () {
-			grid.refreshItems();
-			saveLayout(grid);
+
+		document.querySelectorAll('.components__grid.sortable').forEach((gridItem, index) => {
+
+			let grid;
+
+			grid = new Muuri(gridItem, {
+				dragEnabled: true,
+				dragSort : true,
+				layoutOnInit: true,
+				layoutOnResize : 100,
+				alignRight: false,
+				alignBottom: false,
+				rounding: false,
+			}).on('move', function () {
+				grid.refreshItems();
+				saveLayout(`layout-${index}`, grid);
+			});
+
+			var layout = window.localStorage.getItem(`layout-${index}`);
+			grid.layout(true);
+			if (layout) {
+				loadLayout(`layout-${index}`, grid, layout);
+			}
+
+
+
+			$('.dashboard__hamburger').on('click', function() {
+				setTimeout(function() {
+					grid.refreshItems();
+					grid.refreshSortData();
+					grid.layout();
+					saveLayout(undefined, grid);
+				}, 400);
+			});
+
+
+
 		});
 
-		var layout = window.localStorage.getItem('layout');
-		grid.layout(true);
-		if (layout) {
-			loadLayout(grid, layout);
-		} 
-		// else {
-		// 	grid.layout(true);
-		// }
 	}
 
 
@@ -99,12 +111,8 @@
 		$('.dashboard__hamburger').on('click', function() {
 			$(this).stop().toggleClass('active');
 			$('.dashboard__nav').stop().toggleClass('show');
-			$('.dashboard__content, .dashboard__header').stop().toggleClass('resized');
+			$('.dashboard__content, .dashboard__header, .dashboard__content_tabs').stop().toggleClass('resized');
 			setTimeout(function() {
-				grid.refreshItems();
-				grid.refreshSortData();
-				grid.layout();
-				saveLayout(grid);
 				$('.incoming__info_unit_slider').slick('setPosition');
 			}, 400);
 		});
@@ -920,6 +928,23 @@
 
 
 
+
+
+		/* ---------- dashboard content tabs ---------- */
+
+		$('.dashboard__content_tabs li a').on('click', function() {
+			$('.dashboard__content_tabs li').stop().removeClass('active');
+			$(this).parent().stop().addClass('active');
+
+
+			$(window).scrollTop(0);
+
+			$('.dashboard__content_panel').stop().removeClass('active');
+			$('.dashboard__content_panel')[$(this).parent().index()].classList.add('active');
+
+		});
+
+		/* ---------- end dashboard content tabs ---------- */
 
 		
 

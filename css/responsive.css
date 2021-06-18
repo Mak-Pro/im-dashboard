@@ -113,7 +113,7 @@
 	}
 
 	.dashboard__content {
-		margin-top: 6rem;
+		margin-top: 10rem;
 		padding: 1.5rem 1.5rem 1.5rem;
 	}
 
@@ -268,6 +268,32 @@
 		min-width: 64rem;
 	}
 
+
+
+	.dashboard__content_tabs_list li {
+		margin: 0 0.3rem;
+	}
+
+
+	.dashboard__content_tabs_list li a {
+		font-size: 1.2rem;
+		height: 4rem;
+		line-height: 3.7rem;
+		padding: 0 1.5rem;
+	}
+
+	.dashboard__content_tabs {
+		padding: 0 5rem 0 1.5rem;
+	}
+
+	.dashboard__content_tabs.resized {
+		left: 6rem;
+	}
+
+	.dashboard__content_tabs .settings {
+		right: 1rem;
+	}
+
 }
 
 
@@ -347,7 +373,7 @@
 	}
 
 	.dashboard__content {
-		margin-top: 10.6rem;
+		margin-top: 14.6rem;
 	}
 
 	.dashboard__header .client__link {
@@ -412,6 +438,18 @@
 	.note__info_box {
 		left: 50%;
 		transform: translateX(-50%);
+	}
+
+
+	.dashboard__content_tabs {
+		top: 10.6rem;
+		text-align: left;
+	}
+
+
+	.dashboard__content_tabs_list {
+		max-width: calc(100% - 1rem);
+		overflow-x: auto;
 	}
 
 	
