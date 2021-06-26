@@ -95,13 +95,15 @@
 			$('.dashboard__widgets_list_item_add').on('click', function() {
 			
 				let previewSrc = $(this).parents('.dashboard__widgets_list_item').find('.dashboard__widgets_list_item_tabs_panel.active .info__box img').attr('src');
-
+				const titleText = $(this).parents('.dashboard__widgets_list_item').find('.dashboard__widgets_list_item_header_title').text();
+				
 				const html = `
 					<div class="components__grid_column">
 						<div class="info__box wp">
 							<div class="widget__preview">
 								<a href="javascript:void(0);" class="widget__preview_action"></a>
 								<img src="img/${previewSrc.slice(previewSrc.lastIndexOf('/') + 1)}" alt="widget">
+								<h6 class="widget__preview_title">${titleText}</h6>
 							</div>
 						</div>
 					</div>
@@ -136,7 +138,8 @@
 	/*document ready*/
 	$(document).ready(function(){
 
-		$('[type="checkbox"], [type="radio"], select').styler();
+
+		$('table').wrap('<div class="table__wrapper"></div>');
 
 		$(document).on('click touchstart', function (event) {
 			if (!$(event.target).closest('.jq-selectbox').length) {
@@ -155,7 +158,7 @@
 		$('.dashboard__hamburger').on('click', function() {
 			$(this).stop().toggleClass('active');
 			$('.dashboard__nav').stop().toggleClass('show');
-			$('.dashboard__content, .dashboard__header, .dashboard__content_tabs').stop().toggleClass('resized');
+			$('.dashboard__content, .dashboard__header, .dashboard__content_tabs, .dashboard__content_nested_tabs').stop().toggleClass('resized');
 			setTimeout(function() {
 				$('.incoming__info_unit_slider').slick('setPosition');
 			}, 400);
@@ -211,18 +214,97 @@
 					$(this).hasClass('no-sort') ? noSort.push(index) : null;
 				});
 				
+
 				setTimeout(function() {
-					table.DataTable({
-						paging: false,
-						info: false,
-						responsive: true,
-						searching: false,
-						columnDefs: [
-							{ orderable: false, 
-								targets: noSort 
-							}
-						],
-					});
+
+
+					if(table.hasClass('full')) {
+
+						const filterColumns = [];
+						const filterColumnsIndexes = [];
+
+						table.find('th').each(function(index) {
+							$(this).hasClass('filter') ? filterColumns.push(true) : filterColumns.push(false);
+						});
+
+						filterColumns.forEach((item,index) => {
+							item === true ? filterColumnsIndexes.push(index) : null;
+						});
+
+						
+						table.DataTable({
+							dom: '<"top__line"' + '<"top__line_left"fl>' + '<"top__line_right">>rt<"bottom__line"ip><"clear">',
+							// paging: false,
+							// info: false,
+							responsive: true,
+							// searching: false,
+							columnDefs: [
+								{ orderable: false, 
+									targets: noSort 
+								}
+							],
+							"order": [],
+							language: {
+								search: "_INPUT_",
+								searchPlaceholder: "Search",
+								lengthMenu: "Show per Page _MENU_",
+							},
+							"lengthMenu": [ [10, 15, 20, 25, 50, -1], [10, 15, 20, 25, 50, "All"] ],
+							initComplete: function () {
+
+								const filtersWrapper = table.parents('.dataTables_wrapper').find('.top__line_right');
+
+								filtersWrapper.append('<button class="table__filters">Filter</button>');
+
+								table.parents('.dataTables_wrapper').find('.table__filters').on('click', function() {
+									table.parents('.dataTables_wrapper').find('.table__filter').stop().toggleClass('show');
+								});
+
+
+								this.api().columns(filterColumnsIndexes).every( function (i) {
+									const column = this;
+									const filterTitle = table.find(`th:nth-child(${i + 1})`).text();
+									const filterWrapper = $('<div class="table__filter">').appendTo(filtersWrapper);
+									const filterWrapperTitle = $(`<span>${filterTitle}:</span>`).appendTo(filterWrapper);
+									const select = $('<select><option value="">All</option></select>')
+									.appendTo(filterWrapper)
+									.on( 'change', function () {
+										var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+										column
+										.search( val ? '^' + val + '$' : '', true, false )
+										.draw();
+									});
+
+									column.data().unique().sort().each( function ( d, j ) {
+										if(d.indexOf('span') === 1) {
+											select.append( '<option value="' + d.slice(d.indexOf('>') + 1, d.lastIndexOf('</')) + '">' + d.slice(d.indexOf('>') + 1, d.lastIndexOf('</')) + '</option>' )
+										} else {
+											select.append( '<option value="' + d + '">' + d + '</option>' );
+										}
+										
+									});
+								});
+							},
+						});
+
+					} else {
+
+						table.DataTable({
+							paging: false,
+							info: false,
+							responsive: true,
+							searching: false,
+							columnDefs: [
+								{ orderable: false, 
+									targets: noSort 
+								}
+							],
+							"order": []
+						});
+
+					}
+
 				}, 0);
 			});
 
@@ -1178,6 +1260,29 @@
 
 		/* ---------- end widgets ---------- */
 
+
+
+
+
+		/* ---------- dashboard content nested tabs ---------- */
+
+		$('.dashboard__content_nested_tabs li a').on('click', function() {
+			$('.dashboard__content_nested_tabs li').stop().removeClass('active');
+			$(this).parent().stop().addClass('active');
+
+
+			$(window).scrollTop(0);
+
+			$('.dashboard__content_nested_panel').stop().removeClass('active');
+			if($('.dashboard__content_nested_panel')[$(this).parent().index()] !== undefined) {
+				$('.dashboard__content_nested_panel')[$(this).parent().index()].classList.add('active');
+			}
+			
+
+		});
+
+		/* ---------- end dashboard content nested tabs ---------- */
+
 		
 
 
@@ -1198,6 +1303,11 @@
 
 	/*window load*/
 	$(window).on('load', function() {
+
+		setTimeout(function() {
+			$('[type="checkbox"], [type="radio"], select').styler();
+		}, 1000);
+		
 
 
 		/* ---------- sortable grid ---------- */

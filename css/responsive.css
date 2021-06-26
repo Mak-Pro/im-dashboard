@@ -34,6 +34,10 @@
 		font-size: 48%;
 	}
 
+	.widget__preview_title {
+		font-size: 1.6rem;
+	}
+
 }
 
 
@@ -80,6 +84,39 @@
 	.dashboard__widgets .info__box.preview .dashboard__widgets_grid {
 		margin: 0;
 		width: 100%;
+	}
+
+	.widget__preview_title {
+		font-size: 1.8rem;
+	}
+
+	.notes__table {
+		font-size: 1.2rem;
+		min-width: 92rem;
+	}
+
+
+	table.report::after {
+		width: calc(11% - 0.1rem);
+	}
+
+	.dashboard__content_nested_tabs_list li a {
+		min-width: 16rem;
+	}
+
+	.dashboard__content_sides {
+		flex-direction: column;
+	}
+
+	.dashboard__content_sides_area {
+		width: 100%;
+	}
+
+	.dashboard__content_sides_bar {
+		width: 100%;
+		padding-left: 0;
+		position: relative;
+		right: 0;
 	}
 
 }
@@ -322,6 +359,44 @@
 		right: 1rem;
 	}
 
+	.dashboard__content_nested_tabs_actions a {
+		font-size: 1rem;
+		margin: 0 1.2rem;
+	}
+
+	.dashboard__content_nested_tabs_actions a::after {
+		right: -1.2rem;
+		height: 2rem;
+	}
+
+	.dashboard__content_nested_tabs_list {
+		overflow-x: auto;
+	}
+
+	.dashboard__content_nested_tabs_list li a {
+		min-width: 10rem;
+		font-size: 1.2rem;
+		height: 3.4rem;
+		line-height: 3.3rem;
+	}
+
+	.dashboard__content_nested_tabs {
+		padding: 0.5rem 1.5rem 0;
+		margin-top: -3.8rem;
+	}
+
+	.dashboard__content_nested_tabs ~ .dashboard__content {
+		margin-top: 13.8rem;
+	}
+
+	.dashboard__content_nested_tabs.resized {
+		left: 6rem;
+	}
+
+	.dashboard__content_results_list {
+		font-size: 1.1rem;
+	}
+
 }
 
 
@@ -385,6 +460,14 @@
 	.dashboard__widgets .info__box.list .info__box_body {
 		height: -webkit-calc(100% - 17rem);
 		height: calc(100% - 17.6rem);
+	}
+
+	.dashboard__content_nested_tabs_list {
+		max-width: 45%;
+	}
+
+	.dashboard__content_sides_area table {
+		min-width: 70rem;
 	}
 		
 }
@@ -532,6 +615,28 @@
 		-webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+	}
+
+	.widget__preview_title {
+		font-size: 1.6rem;
+	}
+
+	.dashboard__content_nested_tabs {
+		margin-top: -7.8rem;
+		flex-direction: column;
+	}
+
+	.dashboard__content_nested_tabs_list {
+		max-width: 100%;
+		margin-bottom: 1rem;
+	}
+
+	.dashboard__content_nested_tabs_actions {
+		margin-bottom: 1rem;
+	}
+
+	.dashboard__content_nested_tabs ~ .dashboard__content {
+		margin-top: 22rem;
 	}
 
 	
