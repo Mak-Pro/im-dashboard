@@ -22,7 +22,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/slick.css" />
-	<!-- <link rel="stylesheet" href="css/dataTables.min.css" /> -->
+	<link rel="stylesheet" href="css/datepicker.css" />
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="css/responsive.css" />
@@ -143,7 +143,7 @@
 		<div class="dashboard__nav_inner">
 			<ul class="dashboard__menu">
 				<li class="active">
-					<a href="javascript:void(0);">
+					<a href="/">
 						<img src="img/nav-home-icon.svg" alt="home">
 					</a>
 				</li>
@@ -158,7 +158,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="javascript:void(0);">
+					<a href="notes.html">
 						<img src="img/nav-doc-icon.svg" alt="doc">
 					</a>
 				</li>
@@ -186,19 +186,457 @@
 			<li><a href="javascript:void(0);">Tasks</a></li>
 		</ul>
 
-		<a href="javascript:void(0);" class="event__btn settings">
-			<img src="img/settings-icon-alt.svg" alt="settings">
-		</a>
+		<div class="settings__wrapper settings">
+			<a href="javascript:void(0);" class="event__btn note__info_box_link">
+				<img src="img/settings-icon-alt.svg" alt="settings">
+			</a>
+
+			<div class="note__info_box">
+				<div class="note__info_box_inner">
+					<div class="note__info_box_inner_body">
+						<ul class="note__info_list">
+							<li><a href="widgets.html"><img src="img/edit-icon.svg" alt=""> Dashboard</a></li>
+							<li><a href="javascript:void(0);"><img src="img/edit-icon.svg" alt=""> Analytics</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
 
 	</div>
 
 
-
+<!-- global tabs -->
 <div class="dashboard__content_panels">
 
+	<!-- DASHBOARD PANEL -->
 	<div class="dashboard__content_panel active">
 
+		<div class="dashboard__content">
 
+			<!-- Top grid -->
+			<div class="components__grid columns-5">
+
+				<div class="components__grid_column">
+					<div class="info__box simple__type">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="info__unit_simple">
+								<div class="info__unit_simple_text">
+									<h2 class="title">251</h2>
+									<h5 class="subtitle">Customers</h5>
+									<p class="text"><span class="state up"><i></i> 2.65%</span> since last week</p>
+								</div>
+								<div class="info__unit_simple_icon">
+									<div class="info__unit_simple_icon_inner">
+										<img src="img/users-icon.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<div class="components__grid_column">
+					<div class="info__box simple__type">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="info__unit_simple">
+								<div class="info__unit_simple_text">
+									<h2 class="title">345</h2>
+									<h5 class="subtitle">Open Tasks</h5>
+									<p class="text">2 with deadlines today</p>
+								</div>
+								<div class="info__unit_simple_icon">
+									<div class="info__unit_simple_icon_inner">
+										<img src="img/clock-icon.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<div class="components__grid_column">
+					<div class="info__box simple__type">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="info__unit_simple">
+								<div class="info__unit_simple_text">
+									<h2 class="title">14</h2>
+									<h5 class="subtitle">Cloth Issues</h5>
+									<p class="text"><span class="state down"><i></i> 2.65%</span> since last week</p>
+								</div>
+								<div class="info__unit_simple_icon">
+									<div class="info__unit_simple_icon_inner">
+										<img src="img/paper-curved-icon.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<div class="components__grid_column">
+					<div class="info__box simple__type">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="info__unit_simple">
+								<div class="info__unit_simple_text">
+									<h2 class="title">9</h2>
+									<h5 class="subtitle">Orders On Hold</h5>
+									<p class="text">Sept 7, 2020 since last week</p>
+								</div>
+								<div class="info__unit_simple_icon">
+									<div class="info__unit_simple_icon_inner">
+										<img src="img/clock-sqare-icon.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<div class="components__grid_column">
+					<div class="info__box simple__type">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="info__unit_simple">
+								<div class="info__unit_simple_text">
+									<h2 class="title">51</h2>
+									<h5 class="subtitle">Orders In Alteration</h5>
+									<p class="text">Sept 25, 2020 since last week</p>
+								</div>
+								<div class="info__unit_simple_icon">
+									<div class="info__unit_simple_icon_inner">
+										<img src="img/users-icon.svg" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="components__grid columns-2 sortable">
+
+				<!-- slider -->
+				<div class="components__grid_column">
+					<div class="info__box">
+						<div class="info__box_header"></div>
+						<div class="info__box_body">
+							<div class="incoming__info_unit">
+								<div class="incoming__info_unit_left">
+									<div class="incoming__info_unit_icon">
+										<img src="img/incoming-icon.png" alt="">
+									</div>
+								</div>
+								<div class="incoming__info_unit_right">
+									<h2 class="incoming__info_unit_title">Hello!</h2>
+									<div class="incoming__info_unit_slider_wrapper">
+										<div class="incoming__info_unit_slider">
+											<div class="slide__item">
+												<div class="slide__item_inner">
+													<h5 class="incoming__info_unit_message">You have an update for <span>6 orders.</span></h5>
+													<a href="javascript:void(0);" class="btn btn-orange">Check orders</a>
+												</div>
+											</div>
+											<div class="slide__item">
+												<div class="slide__item_inner">
+													<h5 class="incoming__info_unit_message"><span>3 meetings</span> scheduled for today.</span></h5>
+													<a href="javascript:void(0);" class="btn btn-orange">See meetings</a>
+												</div>
+											</div>
+											<div class="slide__item">
+												<div class="slide__item_inner">
+													<h5 class="incoming__info_unit_message">You have <span>1 training video</span> to watch.  </h5>
+													<a href="javascript:void(0);" class="btn btn-orange">Watch videos</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<!-- tasks list -->
+				<div class="components__grid_column">
+					<div class="info__box tasks__box">
+						<div class="info__box_header">
+							<h4 class="info__box_header_title">Task List</h4>
+							<ul class="info__box_header_actions_list inline">
+								<li>
+									<select name="task__filters" id="task__filters">
+										<option value="title">This Day</option>
+										<option value="time">This Week</option>
+										<option value="title">This Month</option>
+										<option value="title">This Quarter</option>
+									</select>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="refresh">
+										<img src="img/refresh-icon.svg" alt="refresh">
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="more">
+										<img src="img/more-dots-icon.svg" alt="more">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="info__box_body">
+							<div class="tasks__unit">
+								<div class="tasks__unit_header">
+									<div class="tasks__unit_progress">
+										<div class="tasks__unit_progress_top">
+											<span class="tasks__unit_date"></span>
+											<span class="tasks__unit_status"><span class="done"></span>/<span class="total"></span> tasks completed</span>
+										</div>
+										<div class="tasks__unit_progress_bottom">
+											<div class="tasks__unit_progress_line">
+												<span class="tasks__unit_progress_line_fill"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tasks__unit_body">
+									<div class="tasks__unit_creature">
+										<input type="text" name="new__task_name" placeholder="Create a new task">
+										<a href="javascript:void(0);" class="btn btn-orange tasks__unit_creature_submit">Add task</a>
+									</div>
+									<div class="tasks__unit_list_wrapper">
+										<ul class="tasks__unit_list">
+											<li class="tasks__unit_list_item urgent">
+												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+												<span class="tasks__unit_list_item_time">9:36 pm</span>
+												<span class="tasks__unit_list_item_status">Urgent</span>
+											</li>
+											<li class="tasks__unit_list_item new">
+												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+												<span class="tasks__unit_list_item_time">9:36 pm</span>
+												<span class="tasks__unit_list_item_status">New</span>
+											</li>
+											<li class="tasks__unit_list_item done">
+												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
+												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
+												<span class="tasks__unit_list_item_time">9:36 pm</span>
+												<span class="tasks__unit_list_item_status">Done</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+				<!-- lines chart -->
+				<div class="components__grid_column">
+					<div class="info__box chart__type">
+						<div class="info__box_header">
+							<h4 class="info__box_header_title">Financials</h4>
+							<ul class="info__box_header_actions_list inline">
+								<li>
+									<a href="javascript:void(0);" class="refresh redraw__finalt">
+										<img src="img/refresh-icon.svg" alt="refresh">
+									</a>
+								</li>
+								<li>
+									<a href="#this__window" class="more modal__open">
+										<img src="img/more-dots-icon.svg" alt="more">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="info__box_body">
+							<div class="info__box_body_chart">
+								<div id="financials__chart_alt"></div>
+							</div>
+							<div class="info__box_body_chart_info_wrapper">
+								<div class="info__box_body_chart_info"></div>
+								<div class="info__box_body_chart_legends"></div>
+							</div>
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+
+				<div class="components__grid_column">
+					<div class="info__box">
+						<div class="info__box_header">
+							<h4 class="info__box_header_title">Production</h4>
+							<ul class="info__box_header_actions_list inline">
+								<li>
+									<a href="javascript:void(0);" class="refresh">
+										<img src="img/refresh-icon.svg" alt="refresh">
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="more">
+										<img src="img/more-dots-icon.svg" alt="more">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="info__box_body">
+
+							<table class="table__sort">
+								<thead>
+									<tr>
+										<th><span>Order</span></th>
+										<th class="no-sort"><span>Customer</span></th>
+										<th class="no-sort"><span>Update</span></th>
+										<th><span>Time</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>43234</td>
+										<td>Ian Meiers</td>
+										<td>Production Photos Available</td>
+										<td>3:07 pm  10/7/2020</td>
+									</tr>
+									<tr>
+										<td>43289</td>
+										<td>Jo Bloggs</td>
+										<td>Toile Sent</td>
+										<td>5:36 pm  10/6/2020</td>
+									</tr>
+									<tr>
+										<td>43789</td>
+										<td>Paul Parker</td>
+										<td>Order Sent</td>
+										<td>10:25 am  10/6/2020</td>
+									</tr>
+									<tr>
+										<td>43790</td>
+										<td>Fred Perry</td>
+										<td>Production Photos Available</td>
+										<td>9:00 am  10/6/2020</td>
+									</tr>
+									<tr>
+										<td>43798</td>
+										<td>Fred Perry</td>
+										<td>Toile Sent</td>
+										<td>5:55 pm  10/5/2020</td>
+									</tr>
+								</tbody>
+								<tfoot></tfoot>
+							</table>
+
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+
+				<div class="components__grid_column">
+					<div class="info__box">
+						<div class="info__box_header">
+							<h4 class="info__box_header_title">Customers To Contact</h4>
+							<ul class="info__box_header_actions_list inline">
+								<li>
+									<a href="javascript:void(0);" class="refresh">
+										<img src="img/refresh-icon.svg" alt="refresh">
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0);" class="more">
+										<img src="img/more-dots-icon.svg" alt="more">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="info__box_body">
+
+							<table class="table__sort">
+								<thead>
+									<tr>
+										<th class="no-sort"><span>Customer</span></th>
+										<th><span>Last Purchase</span></th>
+										<th><span>Last Contact</span></th>
+										<th><span>Spend</span></th>
+										<th class="no-sort"><span>Note</span></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Ian Meiers</td>
+										<td>20 h ago</td>
+										<td>40 min ago</td>
+										<td>$ 43000</td>
+										<td>Wants a blue suit</td>
+									</tr>
+									<tr>
+										<td>Jo Bloggs</td>
+										<td>1 day ago</td>
+										<td>1 day ago</td>
+										<td>$ 12000</td>
+										<td>Interested in tweed</td>
+									</tr>
+									<tr>
+										<td>Paul Parker</td>
+										<td>35 day ago</td>
+										<td>1 month ago</td>
+										<td>$ 9000</td>
+										<td>Wants a red suit</td>
+									</tr>
+									<tr>
+										<td>Paul Parker</td>
+										<td>35 day ago</td>
+										<td>1 month ago</td>
+										<td>$ 45000</td>
+										<td>Interested in tweed</td>
+									</tr>
+									<tr>
+										<td>Paul Parker</td>
+										<td>1 month ago</td>
+										<td>32 day ago</td>
+										<td>$ 5700</td>
+										<td>Wants a green suit</td>
+									</tr>
+								</tbody>
+								<tfoot></tfoot>
+							</table>
+
+						</div>
+						<div class="info__box_footer"></div>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+
+
+
+
+	<!-- ANALYTICS PANEL -->
+	<div class="dashboard__content_panel">
+
+
+		<!-- nested tabs -->
 		<div class="dashboard__content_nested_tabs">
 			<ul class="dashboard__content_nested_tabs_list">
 				<li class="active"><a href="javascript:void(0);">Analytics</a></li>
@@ -212,120 +650,12 @@
 		</div>
 
 
-
 		<div class="dashboard__content">
 
 			<div class="dashboard__content_nested_panels">
 
+				<!-- Analytics nested panel -->
 				<div class="dashboard__content_nested_panel active">
-					<div class="components__grid columns-5">
-
-						<div class="components__grid_column">
-							<div class="info__box simple__type">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="info__unit_simple">
-										<div class="info__unit_simple_text">
-											<h2 class="title">251</h2>
-											<h5 class="subtitle">Customers</h5>
-											<p class="text"><span class="state up"><i></i> 2.65%</span> since last week</p>
-										</div>
-										<div class="info__unit_simple_icon">
-											<div class="info__unit_simple_icon_inner">
-												<img src="img/users-icon.svg" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box simple__type">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="info__unit_simple">
-										<div class="info__unit_simple_text">
-											<h2 class="title">345</h2>
-											<h5 class="subtitle">Open Tasks</h5>
-											<p class="text">2 with deadlines today</p>
-										</div>
-										<div class="info__unit_simple_icon">
-											<div class="info__unit_simple_icon_inner">
-												<img src="img/clock-icon.svg" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box simple__type">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="info__unit_simple">
-										<div class="info__unit_simple_text">
-											<h2 class="title">14</h2>
-											<h5 class="subtitle">Cloth Issues</h5>
-											<p class="text"><span class="state down"><i></i> 2.65%</span> since last week</p>
-										</div>
-										<div class="info__unit_simple_icon">
-											<div class="info__unit_simple_icon_inner">
-												<img src="img/paper-curved-icon.svg" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box simple__type">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="info__unit_simple">
-										<div class="info__unit_simple_text">
-											<h2 class="title">9</h2>
-											<h5 class="subtitle">Orders On Hold</h5>
-											<p class="text">Sept 7, 2020 since last week</p>
-										</div>
-										<div class="info__unit_simple_icon">
-											<div class="info__unit_simple_icon_inner">
-												<img src="img/clock-sqare-icon.svg" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box simple__type">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="info__unit_simple">
-										<div class="info__unit_simple_text">
-											<h2 class="title">51</h2>
-											<h5 class="subtitle">Orders In Alteration</h5>
-											<p class="text">Sept 25, 2020 since last week</p>
-										</div>
-										<div class="info__unit_simple_icon">
-											<div class="info__unit_simple_icon_inner">
-												<img src="img/users-icon.svg" alt="">
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-					</div>
 
 
 					<div class="components__grid columns-2">
@@ -333,12 +663,238 @@
 						<div class="components__grid_column">
 							<div class="info__box chart__type">
 								<div class="info__box_header">
-									<h4 class="info__box_header_title">Financials</h4>
+									<h4 class="info__box_header_title">Sales &Targets</h4>
 									<ul class="info__box_header_actions_list inline">
 										<li>
-											<a href="javascript:void(0);" class="refresh redraw__finalt">
-												<img src="img/refresh-icon.svg" alt="refresh">
+											<a href="javascript:void(0);" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
 											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="info__box_body_chart">
+										<div id="financials__chart"></div>
+									</div>
+									<div class="info__box_body_chart_info_wrapper">
+										<div class="info__box_body_chart_info">
+											<div class="info__box_body_chart_info_item">
+												<span class="info__box_body_chart_info_item_title">£ 61 798</span>
+												<span class="info__box_body_chart_info_item_text">Total Sales</span>
+											</div>
+
+											<div class="info__box_body_chart_info_item">
+												<span class="info__box_body_chart_info_item_title">£ 60 400</span>
+												<span class="info__box_body_chart_info_item_text">Total Target</span>
+											</div>
+										</div>
+										<div class="info__box_body_chart_legends">
+											<div class="info__box_body_chart_legends_item">
+												<i style="background-color: #F58020"></i>
+												<span>Sales</span>
+											</div>
+
+											<div class="info__box_body_chart_legends_item">
+												<i style="background-color: #FFF0D3"></i>
+												<span>Target</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Sales by Employee</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="date" id="date">
+															<option value="yearly">Yearly</option>
+															<option value="quarterly">Quarterly</option>
+															<option value="monthly">Monthly</option>
+														</select>
+													</li>
+													<li>
+														<select name="year" id="year">
+															<option value="2021">2021</option>
+															<option value="2020">2020</option>
+															<option value="2019">2019</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="sales__by_employee"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 6  290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Average Sales Price by Location</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Yearly</option>
+															<option value="quarterly">Quarterly</option>
+															<option value="monthly">Monthly</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="ny">New York</option>
+															<option value="nyoos">NY (Out of State)</option>
+															<option value="sr">Savile Row</option>
+															<option value="c">City</option>
+															<option value="pl">Philidelphia</option>
+															<option value="wdc">Washington DC</option>
+															<option value="bn">Boston</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="2021">GBP</option>
+															<option value="2020">Pounds</option>
+															<option value="2019">US Dollars</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#1D92FF">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="average__sales_price_by_location"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 7  290 798</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Top Sales Period By Tailor</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Day</option>
+															<option value="quarterly">Week</option>
+															<option value="monthly">Month</option>
+															<option value="monthly">Quarter</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="ny">All</option>
+															<option value="nyoos">Ian Meiers</option>
+															<option value="sr">Jo Bloggs</option>
+															<option value="c">Paul Parker</option>
+															<option value="pl">Fred Perry</option>
+															<option value="wdc">Freddie Next</option>
+															<option value="bn">July Bloggs</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="top__sales_period_by_tailor"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Recruitment Analysis</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li><span>12 Month Selected</span></li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+												</ul>
+											</form>
 										</li>
 										<li>
 											<a href="#this__window" class="more modal__open">
@@ -348,113 +904,103 @@
 									</ul>
 								</div>
 								<div class="info__box_body">
-									<div class="info__box_body_chart">
-										<div id="financials__chart_alt"></div>
-									</div>
-									<div class="info__box_body_chart_info_wrapper">
-										<div class="info__box_body_chart_info"></div>
-										<div class="info__box_body_chart_legends"></div>
-									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box chart__type_circle">
-								<div class="info__box_header">
-									<h4 class="info__box_header_title">Sales Split by Location</h4>
-									<ul class="info__box_header_actions_list inline">
-										<li>
-											<a href="javascript:void(0);" class="refresh">
-												<img src="img/refresh-icon.svg" alt="refresh">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="more">
-												<img src="img/more-dots-icon.svg" alt="more">
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="info__box_body">
-									<div class="info__box_body_left">
-
-									</div>
-									<div class="info__box_body_right">
-										<div class="info__box_body_chart">
-											<div id="sales__split_location"></div>
-										</div>
-										<div class="info__box_body_chart_info_wrapper">
-											<div class="info__box_body_chart_info"></div>
-										</div>
-									</div>
-
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-
-					</div>
-
-
-					<div class="components__grid columns-2 sortable">
-
-						<div class="components__grid_column">
-							<div class="info__box">
-								<div class="info__box_header"></div>
-								<div class="info__box_body">
-									<div class="incoming__info_unit">
-										<div class="incoming__info_unit_left">
-											<div class="incoming__info_unit_icon">
-												<img src="img/incoming-icon.png" alt="">
+									<div class="dashboard__chart_area" id="recruitment__analysis" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_tables">
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>Source</th>
+															<th>Customers</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Google</td>
+															<td>10 868</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Instagram</td>
+															<td>9 876</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Internet Forum</td>
+															<td>9 765</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Newspaper</td>
+															<td>8 777</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Other Search</td>
+															<td>8 213</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Engine</td>
+															<td>7 754</td>
+														</tr>
+													</tbody>
+												</table>
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>Source</th>
+															<th>Customers</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Referral</td>
+															<td>6 765</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Social Media</td>
+															<td>6 433</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Time Out</td>
+															<td>5 889</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Walked Past The Shop</td>
+															<td>334</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Wedding Show</td>
+															<td>256</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Other</td>
+															<td>199</td>
+														</tr>
+													</tbody>
+												</table>
 											</div>
 										</div>
-										<div class="incoming__info_unit_right">
-											<h2 class="incoming__info_unit_title">Hello!</h2>
-											<div class="incoming__info_unit_slider_wrapper">
-												<div class="incoming__info_unit_slider">
-													<div class="slide__item">
-														<div class="slide__item_inner">
-															<h5 class="incoming__info_unit_message">You have an update for <span>6 orders.</span></h5>
-															<a href="javascript:void(0);" class="btn btn-orange">Check orders</a>
-														</div>
-													</div>
-													<div class="slide__item">
-														<div class="slide__item_inner">
-															<h5 class="incoming__info_unit_message"><span>3 meetings</span> scheduled for today.</span></h5>
-															<a href="javascript:void(0);" class="btn btn-orange">See meetings</a>
-														</div>
-													</div>
-													<div class="slide__item">
-														<div class="slide__item_inner">
-															<h5 class="incoming__info_unit_message">You have <span>1 training video</span> to watch.  </h5>
-															<a href="javascript:void(0);" class="btn btn-orange">Watch videos</a>
-														</div>
-													</div>
-												</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner"></div>
+											</div>
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">90 798</h6>
+												<span>New Customers</span>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-						<div class="components__grid_column">
-							<div class="info__box chart__type">
-								<div class="info__box_header">
-									<h4 class="info__box_header_title">Financials</h4>
-									<ul class="info__box_header_actions_list inline">
-										<li>
-											<a href="javascript:void(0);" class="more">
-												<img src="img/more-dots-icon.svg" alt="more">
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="info__box_body">
-									<div id="financials__chart"></div>
 								</div>
 								<div class="info__box_footer"></div>
 							</div>
@@ -463,156 +1009,21 @@
 						<div class="components__grid_column">
 							<div class="info__box">
 								<div class="info__box_header">
-									<h4 class="info__box_header_title">Production</h4>
+									<h4 class="info__box_header_title">Top Sales Period By Company</h4>
 									<ul class="info__box_header_actions_list inline">
 										<li>
-											<a href="javascript:void(0);" class="refresh">
-												<img src="img/refresh-icon.svg" alt="refresh">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="more">
-												<img src="img/more-dots-icon.svg" alt="more">
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="info__box_body">
-
-									<table class="table__sort">
-										<thead>
-											<tr>
-												<th><span>Order</span></th>
-												<th class="no-sort"><span>Customer</span></th>
-												<th class="no-sort"><span>Update</span></th>
-												<th><span>Time</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>43234</td>
-												<td>Ian Meiers</td>
-												<td>Production Photos Available</td>
-												<td>3:07 pm  10/7/2020</td>
-											</tr>
-											<tr>
-												<td>43289</td>
-												<td>Jo Bloggs</td>
-												<td>Toile Sent</td>
-												<td>5:36 pm  10/6/2020</td>
-											</tr>
-											<tr>
-												<td>43789</td>
-												<td>Paul Parker</td>
-												<td>Order Sent</td>
-												<td>10:25 am  10/6/2020</td>
-											</tr>
-											<tr>
-												<td>43790</td>
-												<td>Fred Perry</td>
-												<td>Production Photos Available</td>
-												<td>9:00 am  10/6/2020</td>
-											</tr>
-											<tr>
-												<td>43798</td>
-												<td>Fred Perry</td>
-												<td>Toile Sent</td>
-												<td>5:55 pm  10/5/2020</td>
-											</tr>
-										</tbody>
-										<tfoot></tfoot>
-									</table>
-
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box tasks__box">
-								<div class="info__box_header">
-									<h4 class="info__box_header_title">Task List</h4>
-									<ul class="info__box_header_actions_list inline">
-										<li>
-											<select name="task__filters" id="task__filters">
-												<option value="title">This Day</option>
-												<option value="time">This Week</option>
-												<option value="title">This Month</option>
-												<option value="title">This Quarter</option>
-											</select>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="refresh">
-												<img src="img/refresh-icon.svg" alt="refresh">
-											</a>
-										</li>
-										<li>
-											<a href="javascript:void(0);" class="more">
-												<img src="img/more-dots-icon.svg" alt="more">
-											</a>
-										</li>
-									</ul>
-								</div>
-								<div class="info__box_body">
-									<div class="tasks__unit">
-										<div class="tasks__unit_header">
-											<div class="tasks__unit_progress">
-												<div class="tasks__unit_progress_top">
-													<span class="tasks__unit_date"></span>
-													<span class="tasks__unit_status"><span class="done"></span>/<span class="total"></span> tasks completed</span>
-												</div>
-												<div class="tasks__unit_progress_bottom">
-													<div class="tasks__unit_progress_line">
-														<span class="tasks__unit_progress_line_fill"></span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tasks__unit_body">
-											<div class="tasks__unit_creature">
-												<input type="text" name="new__task_name" placeholder="Create a new task">
-												<a href="javascript:void(0);" class="btn btn-orange tasks__unit_creature_submit">Add task</a>
-											</div>
-											<div class="tasks__unit_list_wrapper">
-												<ul class="tasks__unit_list">
-													<li class="tasks__unit_list_item urgent">
-														<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-														<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-														<span class="tasks__unit_list_item_time">9:36 pm</span>
-														<span class="tasks__unit_list_item_status">Urgent</span>
-													</li>
-													<li class="tasks__unit_list_item new">
-														<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-														<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-														<span class="tasks__unit_list_item_time">9:36 pm</span>
-														<span class="tasks__unit_list_item_status">New</span>
-													</li>
-													<li class="tasks__unit_list_item done">
-														<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-														<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-														<span class="tasks__unit_list_item_time">9:36 pm</span>
-														<span class="tasks__unit_list_item_status">Done</span>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Day</option>
+															<option value="quarterly">Week</option>
+															<option value="monthly">Month</option>
+															<option value="monthly">Quarter</option>
+														</select>
 													</li>
 												</ul>
-											</div>
-										</div>
-									</div>
-
-
-								</div>
-								<div class="info__box_footer"></div>
-							</div>
-						</div>
-
-						<div class="components__grid_column">
-							<div class="info__box">
-								<div class="info__box_header">
-									<h4 class="info__box_header_title">Customers To Contact</h4>
-									<ul class="info__box_header_actions_list inline">
-										<li>
-											<a href="javascript:void(0);" class="refresh">
-												<img src="img/refresh-icon.svg" alt="refresh">
-											</a>
+											</form>
 										</li>
 										<li>
 											<a href="javascript:void(0);" class="more">
@@ -622,64 +1033,34 @@
 									</ul>
 								</div>
 								<div class="info__box_body">
-
-									<table class="table__sort">
-										<thead>
-											<tr>
-												<th class="no-sort"><span>Customer</span></th>
-												<th><span>Last Purchase</span></th>
-												<th><span>Last Contact</span></th>
-												<th><span>Spend</span></th>
-												<th class="no-sort"><span>Note</span></th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Ian Meiers</td>
-												<td>20 h ago</td>
-												<td>40 min ago</td>
-												<td>$ 43000</td>
-												<td>Wants a blue suit</td>
-											</tr>
-											<tr>
-												<td>Jo Bloggs</td>
-												<td>1 day ago</td>
-												<td>1 day ago</td>
-												<td>$ 12000</td>
-												<td>Interested in tweed</td>
-											</tr>
-											<tr>
-												<td>Paul Parker</td>
-												<td>35 day ago</td>
-												<td>1 month ago</td>
-												<td>$ 9000</td>
-												<td>Wants a red suit</td>
-											</tr>
-											<tr>
-												<td>Paul Parker</td>
-												<td>35 day ago</td>
-												<td>1 month ago</td>
-												<td>$ 45000</td>
-												<td>Interested in tweed</td>
-											</tr>
-											<tr>
-												<td>Paul Parker</td>
-												<td>1 month ago</td>
-												<td>32 day ago</td>
-												<td>$ 5700</td>
-												<td>Wants a green suit</td>
-											</tr>
-										</tbody>
-										<tfoot></tfoot>
-									</table>
-
+									<div class="dashboard__chart_area columns" data-chart-color="#F58020">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="top__sales_period_by_company"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="info__box_footer"></div>
 							</div>
 						</div>
 
 					</div>
+
+
+					
 				</div>
+
+
+
+
+
 
 				<div class="dashboard__content_nested_panel">
 					<div class="components__grid">
@@ -1142,237 +1523,1279 @@
 				</div>
 			</div>
 
+
+
 		</div>
 	</div>
 
 
+
+	<!-- CUSTOMERS PANEL -->
 	<div class="dashboard__content_panel">
+		
+		<!-- nested tabs -->
+		<div class="dashboard__content_nested_tabs">
+			<ul class="dashboard__content_nested_tabs_list">
+				<li class="active"><a href="javascript:void(0);">Overview</a></li>
+				<li><a href="javascript:void(0);">Customers Lists</a></li>
+			</ul>
+			<div class="dashboard__content_nested_tabs_actions">
+				<a href="javascript:void(0);"><img src="img/download-icon.svg" alt="" class="download"> Download Analysis page as .pdf</a>
+				<a href="javascript:void(0);" class="print"><img src="img/print-icon.svg" alt="">Print page</a>
+			</div>
+		</div>
+
+
 		<div class="dashboard__content">
+			
+			<div class="dashboard__content_nested_panels">
+				
+				<!-- Overview nested panel -->
+				<div class="dashboard__content_nested_panel active">
+					
+					<div class="components__grid columns-2">
 
-			<div class="components__grid columns-2 sortable">
-
-				<div class="components__grid_column">
-					<div class="info__box">
-						<div class="info__box_header">
-							<h4 class="info__box_header_title">Production</h4>
-							<ul class="info__box_header_actions_list inline">
-								<li>
-									<a href="javascript:void(0);" class="refresh">
-										<img src="img/refresh-icon.svg" alt="refresh">
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" class="more">
-										<img src="img/more-dots-icon.svg" alt="more">
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="info__box_body">
-
-							<table class="table__sort">
-								<thead>
-									<tr>
-										<th><span>Order</span></th>
-										<th class="no-sort"><span>Customer</span></th>
-										<th class="no-sort"><span>Update</span></th>
-										<th><span>Time</span></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>43234</td>
-										<td>Ian Meiers</td>
-										<td>Production Photos Available</td>
-										<td>3:07 pm  10/7/2020</td>
-									</tr>
-									<tr>
-										<td>43289</td>
-										<td>Jo Bloggs</td>
-										<td>Toile Sent</td>
-										<td>5:36 pm  10/6/2020</td>
-									</tr>
-									<tr>
-										<td>43789</td>
-										<td>Paul Parker</td>
-										<td>Order Sent</td>
-										<td>10:25 am  10/6/2020</td>
-									</tr>
-									<tr>
-										<td>43790</td>
-										<td>Fred Perry</td>
-										<td>Production Photos Available</td>
-										<td>9:00 am  10/6/2020</td>
-									</tr>
-									<tr>
-										<td>43798</td>
-										<td>Fred Perry</td>
-										<td>Toile Sent</td>
-										<td>5:55 pm  10/5/2020</td>
-									</tr>
-								</tbody>
-								<tfoot></tfoot>
-							</table>
-
-						</div>
-						<div class="info__box_footer"></div>
-					</div>
-				</div>
-
-				<div class="components__grid_column">
-					<div class="info__box tasks__box">
-						<div class="info__box_header">
-							<h4 class="info__box_header_title">Task List</h4>
-							<ul class="info__box_header_actions_list inline">
-								<li>
-									<select name="task__filters" id="task__filters">
-										<option value="title">This Day</option>
-										<option value="time">This Week</option>
-										<option value="title">This Month</option>
-										<option value="title">This Quarter</option>
-									</select>
-								</li>
-								<li>
-									<a href="javascript:void(0);" class="refresh">
-										<img src="img/refresh-icon.svg" alt="refresh">
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" class="more">
-										<img src="img/more-dots-icon.svg" alt="more">
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="info__box_body">
-							<div class="tasks__unit">
-								<div class="tasks__unit_header">
-									<div class="tasks__unit_progress">
-										<div class="tasks__unit_progress_top">
-											<span class="tasks__unit_date"></span>
-											<span class="tasks__unit_status"><span class="done"></span>/<span class="total"></span> tasks completed</span>
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Number of Customers</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<a href="#this__window" class="more modal__open">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area presets" id="number__of_customers">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_tables">
+												<table>
+													<thead>
+														<tr>
+															<th></th>
+															<th>Status</th>
+															<th>Customers</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator" style="background: #1D92FF;"></span></td>
+															<td>Active</td>
+															<td>150 743</td>
+														</tr>
+														<tr>
+															<td><span class="indicator" style="background: #F05555;"></span></td>
+															<td>Inactive</td>
+															<td>145 874</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
 										</div>
-										<div class="tasks__unit_progress_bottom">
-											<div class="tasks__unit_progress_line">
-												<span class="tasks__unit_progress_line_fill"></span>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner"></div>
+											</div>
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">290 798</h6>
+												<span>Total Customers</span>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="tasks__unit_body">
-									<div class="tasks__unit_creature">
-										<input type="text" name="new__task_name" placeholder="Create a new task">
-										<a href="javascript:void(0);" class="btn btn-orange tasks__unit_creature_submit">Add task</a>
-									</div>
-									<div class="tasks__unit_list_wrapper">
-										<ul class="tasks__unit_list">
-											<li class="tasks__unit_list_item urgent">
-												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-												<span class="tasks__unit_list_item_time">9:36 pm</span>
-												<span class="tasks__unit_list_item_status">Urgent</span>
-											</li>
-											<li class="tasks__unit_list_item new">
-												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-												<span class="tasks__unit_list_item_time">9:36 pm</span>
-												<span class="tasks__unit_list_item_status">New</span>
-											</li>
-											<li class="tasks__unit_list_item done">
-												<a href="javascript:void(0);" class="tasks__unit_list_item_done"></a>
-												<h6 class="tasks__unit_list_item_title">Check last orders, create new tasks for employees</h6>
-												<span class="tasks__unit_list_item_time">9:36 pm</span>
-												<span class="tasks__unit_list_item_status">Done</span>
-											</li>
-										</ul>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Recruitment Analysis</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li><span>12 Month Selected</span></li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more modal__open">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area" id="recruitment__analysis_2" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_tables">
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>Source</th>
+															<th>Customers</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Google</td>
+															<td>10 868</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Instagram</td>
+															<td>9 876</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Internet Forum</td>
+															<td>9 765</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Newspaper</td>
+															<td>8 777</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Other Search</td>
+															<td>8 213</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Engine</td>
+															<td>7 754</td>
+														</tr>
+													</tbody>
+												</table>
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>Source</th>
+															<th>Customers</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Referral</td>
+															<td>6 765</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Social Media</td>
+															<td>6 433</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Time Out</td>
+															<td>5 889</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Walked Past The Shop</td>
+															<td>334</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Wedding Show</td>
+															<td>256</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>Other</td>
+															<td>199</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner"></div>
+											</div>
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">90 798</h6>
+												<span>New Customers</span>
+											</div>
+										</div>
 									</div>
 								</div>
+								<div class="info__box_footer"></div>
 							</div>
-
-
 						</div>
-						<div class="info__box_footer"></div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Order Type Analysis</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li><span>12 Month Selected</span></li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more modal__open">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area presets" id="order__type_analysis" data-chart-color="#1D92FF">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_tables">
+												<table>
+													<thead>
+														<tr>
+															<th>#</th>
+															<th></th>
+															<th>Status</th>
+															<th>Order</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>1</td>
+															<td>Business</td>
+															<td>10 868</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>2</td>
+															<td>Casual Wear</td>
+															<td>9 876</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>3</td>
+															<td>Event</td>
+															<td>9 765</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt"></span></td>
+															<td>4</td>
+															<td>Wedding</td>
+															<td>8 777</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner"></div>
+											</div>
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">90 798</h6>
+												<span>Total Orders</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Customer Acquisition</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li><span>12 Month Selected</span></li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+													<li>
+														<div class="filter__unit">
+															<input type="text" data-calendar data-min="true">
+														</div>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more modal__open">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area presets" id="customer__acquisition">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_tables">
+												<table>
+													<thead>
+														<tr>
+															<th></th>
+															<th>Status</th>
+															<th>Orders</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><span class="indicator gt" style="background: #50D775;"></span></td>
+															<td>New</td>
+															<td>2 150 743</td>
+														</tr>
+														<tr>
+															<td><span class="indicator gt" style="background: #1D92FF;"></span></td>
+															<td>Repeat</td>
+															<td>1 145 874</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner">
+													<div class="percent__pies">
+														<div class="percent__pies_inner">
+															<div class="percent__pie" data-pie-percent="68" data-pie-color="#50D775">
+																<span class="percent__pie_overlay"></span>
+																<span class="percent__pie_text"></span>
+																<svg version="1.1" class="svg-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 0 0" xml:space="preserve">
+																	<circle fill="none" cx="" cy="" r="" stroke="" stroke-width=""></circle>
+																</svg>
+															</div>
+															<div class="percent__pie" data-pie-percent="32" data-pie-color="#1D92FF">
+																<span class="percent__pie_overlay"></span>
+																<span class="percent__pie_text"></span>
+																<svg version="1.1" class="svg-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 0 0" xml:space="preserve">
+																	<circle fill="none" cx="" cy="" r="" stroke="" stroke-width=""></circle>
+																</svg>
+															</div>
+														</div>
+													</div>
+													
+												</div>
+											</div>
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">3 455 798</h6>
+												<span>Total Orders</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Sales by Employee</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="date" id="date">
+															<option value="yearly">Yearly</option>
+															<option value="quarterly">Quarterly</option>
+															<option value="monthly">Monthly</option>
+														</select>
+													</li>
+													<li>
+														<select name="year" id="year">
+															<option value="2021">2021</option>
+															<option value="2020">2020</option>
+															<option value="2019">2019</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="sales__by_employee_2"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 6  290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Average Sales Price by Location</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Yearly</option>
+															<option value="quarterly">Quarterly</option>
+															<option value="monthly">Monthly</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="ny">New York</option>
+															<option value="nyoos">NY (Out of State)</option>
+															<option value="sr">Savile Row</option>
+															<option value="c">City</option>
+															<option value="pl">Philidelphia</option>
+															<option value="wdc">Washington DC</option>
+															<option value="bn">Boston</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="2021">GBP</option>
+															<option value="2020">Pounds</option>
+															<option value="2019">US Dollars</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="#this__window" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#1D92FF">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="average__sales_price_by_location_2"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 7  290 798</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Top Sales Period By Tailor</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Day</option>
+															<option value="quarterly">Week</option>
+															<option value="monthly">Month</option>
+															<option value="monthly">Quarter</option>
+														</select>
+													</li>
+													<li>
+														<select name="" id="">
+															<option value="ny">All</option>
+															<option value="nyoos">Ian Meiers</option>
+															<option value="sr">Jo Bloggs</option>
+															<option value="c">Paul Parker</option>
+															<option value="pl">Fred Perry</option>
+															<option value="wdc">Freddie Next</option>
+															<option value="bn">July Bloggs</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#50D775">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="top__sales_period_by_tailor_2"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
+
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_header">
+									<h4 class="info__box_header_title">Top Sales Period By Company</h4>
+									<ul class="info__box_header_actions_list inline">
+										<li>
+											<form action="" class="info__box_header_filters_form">
+												<ul class="info__box_header_filters">
+													<li>
+														<select name="" id="">
+															<option value="yearly">Day</option>
+															<option value="quarterly">Week</option>
+															<option value="monthly">Month</option>
+															<option value="monthly">Quarter</option>
+														</select>
+													</li>
+												</ul>
+											</form>
+										</li>
+										<li>
+											<a href="javascript:void(0);" class="more">
+												<img src="img/more-dots-icon.svg" alt="more">
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="info__box_body">
+									<div class="dashboard__chart_area columns" data-chart-color="#F58020">
+										<div class="dashboard__chart_area_left">
+											<div class="dashboard__chart_area_graph">
+												<div class="dashboard__chart_area_graph_inner" id="top__sales_period_by_company_2"></div>
+											</div>
+										</div>
+										<div class="dashboard__chart_area_right">
+											<div class="dashboard__chart_area_total">
+												<h6 class="dashboard__chart_area_total_title">£ 290 711</h6>
+												<span>Total Sales</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
+						</div>
+
 					</div>
+
 				</div>
 
-				<div class="components__grid_column">
-					<div class="info__box">
-						<div class="info__box_header">
-							<h4 class="info__box_header_title">Customers To Contact</h4>
-							<ul class="info__box_header_actions_list inline">
-								<li>
-									<a href="javascript:void(0);" class="refresh">
-										<img src="img/refresh-icon.svg" alt="refresh">
-									</a>
-								</li>
-								<li>
-									<a href="javascript:void(0);" class="more">
-										<img src="img/more-dots-icon.svg" alt="more">
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="info__box_body">
+				<!-- Customers Lists panel -->
+				<div class="dashboard__content_nested_panel">
+					
 
-							<table class="table__sort">
-								<thead>
-									<tr>
-										<th class="no-sort"><span>Customer</span></th>
-										<th><span>Last Purchase</span></th>
-										<th><span>Last Contact</span></th>
-										<th><span>Spend</span></th>
-										<th class="no-sort"><span>Note</span></th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Ian Meiers</td>
-										<td>20 h ago</td>
-										<td>40 min ago</td>
-										<td>$ 43000</td>
-										<td>Wants a blue suit</td>
-									</tr>
-									<tr>
-										<td>Jo Bloggs</td>
-										<td>1 day ago</td>
-										<td>1 day ago</td>
-										<td>$ 12000</td>
-										<td>Interested in tweed</td>
-									</tr>
-									<tr>
-										<td>Paul Parker</td>
-										<td>35 day ago</td>
-										<td>1 month ago</td>
-										<td>$ 9000</td>
-										<td>Wants a red suit</td>
-									</tr>
-									<tr>
-										<td>Paul Parker</td>
-										<td>35 day ago</td>
-										<td>1 month ago</td>
-										<td>$ 45000</td>
-										<td>Interested in tweed</td>
-									</tr>
-									<tr>
-										<td>Paul Parker</td>
-										<td>1 month ago</td>
-										<td>32 day ago</td>
-										<td>$ 5700</td>
-										<td>Wants a green suit</td>
-									</tr>
-								</tbody>
-								<tfoot></tfoot>
-							</table>
-
+					<div class="components__grid">
+						<div class="components__grid_column">
+							<div class="info__box">
+								<div class="info__box_body">
+									<table class="table__sort full customers">
+										<thead>
+											<th class="filter"><span>Status</span></th>
+											<th class="no-sort"><span>Photo</span></th>
+											<th><span>First Name</span></th>
+											<th><span>Last Name</span></th>
+											<th><span>Spend</span></th>
+											<th><span>Referal</span></th>
+											<th class="no-sort"><span>S</span></th>
+											<th class="no-sort"><span>ET</span></th>
+											<th class="no-sort"><span>J</span></th>
+											<th class="no-sort"><span>T</span></th>
+											<th class="no-sort"><span>W</span></th>
+											<th class="no-sort"><span>DJ</span></th>
+											<th class="no-sort"><span>FW</span></th>
+											<th class="no-sort"><span>S</span></th>
+											<th class="no-sort"><span>O</span></th>
+											<th class="no-sort"><span>A</span></th>
+											<th class="no-sort"><span>Location</span></th>
+											<th><span>Since</span></th>
+											<th><span>Last Purchase</span></th>
+											<th><span>Birthday</span></th>
+											<th><span>Wedding Date</span></th>
+											<th class="filter"><span>News letter</span></th>
+											<th class="no-sort filter"><span>Recruited By</span></th>
+										</thead>
+										<tbody>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>Ian</td>
+												<td>Maiers</td>
+												<td>£ 48 000</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>11 days ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Referral</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Jessica</td>
+												<td>Lambert</td>
+												<td>£ 46 008</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>20 h ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label danger">Inactive</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>James</td>
+												<td>Sleater</td>
+												<td>£ 45 070</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>35 days ago</td>
+												<td>Oct 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label secondary">Terminated</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>James</td>
+												<td>Gouse</td>
+												<td>£ 44 007</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>3 month ago</td>
+												<td>Oct 3rd</td>
+												<td>July 1st, 2018</td>
+												<td>Opt In</td>
+												<td>Wedding Show</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Alan</td>
+												<td>Cooper</td>
+												<td>£ 42 065</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>2 h ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2016</td>
+												<td>Opt Out</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Marcus</td>
+												<td>Levin</td>
+												<td>£ 36 023</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Eden</td>
+												<td>Bothman</td>
+												<td>£ 32 043</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2018</td>
+												<td>Opt Out</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Skylar</td>
+												<td>Dias</td>
+												<td>£ 30 345</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>8 month ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt Out</td>
+												<td>Wedding Show</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>Ian</td>
+												<td>Maiers</td>
+												<td>£ 48 000</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>11 days ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Referral</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Jessica</td>
+												<td>Lambert</td>
+												<td>£ 46 008</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>20 h ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label danger">Inactive</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>James</td>
+												<td>Sleater</td>
+												<td>£ 45 070</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>35 days ago</td>
+												<td>Oct 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label secondary">Terminated</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>James</td>
+												<td>Gouse</td>
+												<td>£ 44 007</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>3 month ago</td>
+												<td>Oct 3rd</td>
+												<td>July 1st, 2018</td>
+												<td>Opt In</td>
+												<td>Wedding Show</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Alan</td>
+												<td>Cooper</td>
+												<td>£ 42 065</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>2 h ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2016</td>
+												<td>Opt Out</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Marcus</td>
+												<td>Levin</td>
+												<td>£ 36 023</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Eden</td>
+												<td>Bothman</td>
+												<td>£ 32 043</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2018</td>
+												<td>Opt Out</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Skylar</td>
+												<td>Dias</td>
+												<td>£ 30 345</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>8 month ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt Out</td>
+												<td>Wedding Show</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>Ian</td>
+												<td>Maiers</td>
+												<td>£ 48 000</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>11 days ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Referral</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Jessica</td>
+												<td>Lambert</td>
+												<td>£ 46 008</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>20 h ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label danger">Inactive</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar-stub.png')"></span></td>
+												<td>James</td>
+												<td>Sleater</td>
+												<td>£ 45 070</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>35 days ago</td>
+												<td>Oct 22th</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label secondary">Terminated</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>James</td>
+												<td>Gouse</td>
+												<td>£ 44 007</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>3 month ago</td>
+												<td>Oct 3rd</td>
+												<td>July 1st, 2018</td>
+												<td>Opt In</td>
+												<td>Wedding Show</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Alan</td>
+												<td>Cooper</td>
+												<td>£ 42 065</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>2 h ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2016</td>
+												<td>Opt Out</td>
+												<td>Instagram</td>
+											</tr>
+											<tr>
+												<td><span class="status__label primary">Quiet</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Marcus</td>
+												<td>Levin</td>
+												<td>£ 36 023</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>N/A</td>
+												<td>Opt In</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Eden</td>
+												<td>Bothman</td>
+												<td>£ 32 043</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>Savile Row</td>
+												<td>Oct 3rd, 2015</td>
+												<td>5 days ago</td>
+												<td>Oct 3rd</td>
+												<td>Oct 1st, 2018</td>
+												<td>Opt Out</td>
+												<td>Google</td>
+											</tr>
+											<tr>
+												<td><span class="status__label success">Active</span></td>
+												<td><span class="avatar" style="background-image: url('img/table-avatar.jpg')"></span></td>
+												<td>Skylar</td>
+												<td>Dias</td>
+												<td>£ 30 345</td>
+												<td>£ 10 000</td>
+												<td>10</td>
+												<td>2</td>
+												<td>12</td>
+												<td>13</td>
+												<td>4</td>
+												<td>1</td>
+												<td>1</td>
+												<td>34</td>
+												<td>2</td>
+												<td>0</td>
+												<td>The City</td>
+												<td>Oct 3rd, 2015</td>
+												<td>8 month ago</td>
+												<td>Sep 22th</td>
+												<td>N/A</td>
+												<td>Opt Out</td>
+												<td>Wedding Show</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="info__box_footer"></div>
+							</div>
 						</div>
-						<div class="info__box_footer"></div>
 					</div>
+
+
 				</div>
 
 			</div>
 
 		</div>
+
+			
+
+				
+
 	</div>
+
+
 	
 </div>
 
@@ -1434,6 +2857,7 @@
 	<script src="js/highcharts-more.js"></script>
 	<script src="js/highcharts-solidgauge.js"></script>
 	<script src="js/moment.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
 	<script src="js/custom.js"></script>
 </body>
 </html>

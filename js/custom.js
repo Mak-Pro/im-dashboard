@@ -139,6 +139,46 @@
 	$(document).ready(function(){
 
 
+		$.fn.datepicker.language['en'] =  {
+		    days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satturday'],
+		    daysShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+		    daysMin: ['Sn','Mn','Tu','Wd','Th','Fr','St'],
+		    months: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+		    monthsShort: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','dec'],
+		    today: 'Tuday',
+		    clear: 'Clear',
+		    dateFormat: 'mm.dd.yyyy',
+		    timeFormat: 'hh:ii',
+		    firstDay: 1
+		};
+
+
+		$('[data-calendar]').each(function() {
+			let calendarInput = $(this),
+					maxDate = Boolean(calendarInput.attr('data-min'));
+			calendarInput.datepicker({
+				// inline: true,
+				range: true,
+				language: 'en',
+				dateFormat: 'M dd, yyyy',
+				maxDate: maxDate ? new Date() : null,
+				position: "bottom right",
+				onSelect: function(formattedDate, date, inst) {
+					inst.hide();
+					$(inst.el).parent().stop().removeClass('show');
+				},
+				onShow: function(inst, animationCompleted) {
+					$(inst.el).parent().stop().addClass('show');
+				}
+			});
+
+
+			calendarInput.datepicker().data('datepicker').selectDate(new Date());
+		});
+
+
+
+
 		$('table').wrap('<div class="table__wrapper"></div>');
 
 		$(document).on('click touchstart', function (event) {
@@ -359,7 +399,7 @@
 			Highcharts.chart('financials__chart', {
 				chart: {
 					type: 'column',
-					height: 208,
+					height: 240,
 					style: {
 						fontFamily: 'Poppins',
 						fontSize: '1rem',
@@ -502,7 +542,7 @@
 			let areaLineChart = Highcharts.chart('financials__chart_alt', {
 				chart: {
 					type: 'areaspline',
-					height: 208,
+					height: 240,
 					style: {
 						fontFamily: 'Poppins',
 						fontSize: '1rem',
@@ -905,6 +945,1432 @@
 
 
 
+		/* ---------- all charts ---------- */
+
+
+
+		function hexToRgbA(hex,alpha){
+			var c;
+			if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+				c= hex.substring(1).split('');
+				if(c.length== 3){
+					c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+				}
+				c= '0x'+c.join('');
+				return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',' + alpha + ')';
+			}
+			throw new Error('Bad Hex');
+		}
+
+
+
+		if($('.dashboard__chart_area').length) {
+
+			document.querySelectorAll('.dashboard__chart_area').forEach(chart => {
+
+				const type = chart.getAttribute('data-chart-type');
+				const color = chart.getAttribute('data-chart-color');
+				const indicatorsLength = chart.querySelectorAll('.indicator.gt').length;
+
+				if(color !== null) {
+					for(let i = indicatorsLength, k = 1; i > 0; i--, k++) {
+						const indicator = chart.querySelectorAll('.indicator.gt')[i - 1];
+						setTimeout(function() {
+							indicator.style.backgroundColor = hexToRgbA(color, 1/indicatorsLength * k);
+						}, 0);
+
+					}
+				}
+
+				
+
+			});
+
+		}
+
+
+
+
+
+		// recruitment__analysis
+
+		if($('#recruitment__analysis').length) {
+
+			const chartBox = document.querySelector('#recruitment__analysis .dashboard__chart_area_graph_inner');
+
+			const displayPercents = 24;
+
+			Highcharts.chart(chartBox, {
+
+				chart: {
+					type: 'solidgauge',
+					height: '100%',
+				},
+
+				credits: {
+					enabled: false
+				},
+
+				title: {
+					text: '',
+				},
+
+				tooltip: false,
+
+				pane: {
+					startAngle: 0,
+					endAngle: 360,
+					background: [{
+						outerRadius: '128%',
+						innerRadius: '0%',
+						backgroundColor: Highcharts.color('#50D775').setOpacity(0.1).get(),
+						borderWidth: 0
+					}]
+				},
+
+				yAxis: {
+					min: 0,
+					max: 100,
+					lineWidth: 0,
+					tickPositions: []
+				},
+
+				plotOptions: {
+					solidgauge: {
+						dataLabels: {
+							enabled: true,
+							borderWidth: 0,
+							align: 'center',
+							x: 0,
+	            y: -20,
+							format: `${displayPercents} %`,
+							color: '#50D775',
+							style: {
+								fontFamily: 'Poppins',
+								fontWeight: '700',
+								fontSize: '3.2rem',
+								textOutline: 'none',
+							},
+						},
+						linecap: 'round',
+						stickyTracking: false,
+						rounded: true
+					},
+
+					series: {
+	            cursor: 'pointer',
+	            point: {
+	                events: {
+	                    // mouseOver: function () {
+	                    //     // console.log(this);
+	                    // }
+	                }
+	            }
+	        }
+				},
+
+				series: [{
+					name: 'Average',
+					data: [{
+						color: '#8FE5A7',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 100,
+					}],
+				}, {
+					name: 'Current',
+					data: [{
+						color: '#50D775',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 24,
+						options: {
+
+						}
+					}]
+				}]
+			});
+		}
+
+
+
+
+
+		// recruitment__analysis
+
+		if($('#recruitment__analysis_2').length) {
+
+			const chartBox = document.querySelector('#recruitment__analysis_2 .dashboard__chart_area_graph_inner');
+
+			const displayPercents = 24;
+
+			Highcharts.chart(chartBox, {
+
+				chart: {
+					type: 'solidgauge',
+					height: '100%',
+				},
+
+				credits: {
+					enabled: false
+				},
+
+				title: {
+					text: '',
+				},
+
+				tooltip: false,
+
+				pane: {
+					startAngle: 0,
+					endAngle: 360,
+					background: [{
+						outerRadius: '128%',
+						innerRadius: '0%',
+						backgroundColor: Highcharts.color('#50D775').setOpacity(0.1).get(),
+						borderWidth: 0
+					}]
+				},
+
+				yAxis: {
+					min: 0,
+					max: 100,
+					lineWidth: 0,
+					tickPositions: []
+				},
+
+				plotOptions: {
+					solidgauge: {
+						dataLabels: {
+							enabled: true,
+							borderWidth: 0,
+							align: 'center',
+							x: 0,
+	            y: -20,
+							format: `${displayPercents} %`,
+							color: '#50D775',
+							style: {
+								fontFamily: 'Poppins',
+								fontWeight: '700',
+								fontSize: '3.2rem',
+								textOutline: 'none',
+							},
+						},
+						linecap: 'round',
+						stickyTracking: false,
+						rounded: true
+					},
+
+					series: {
+	            cursor: 'pointer',
+	            point: {
+	                events: {
+	                    // mouseOver: function () {
+	                    //     // console.log(this);
+	                    // }
+	                }
+	            }
+	        }
+				},
+
+				series: [{
+					name: 'Average',
+					data: [{
+						color: '#8FE5A7',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 100,
+					}],
+				}, {
+					name: 'Current',
+					data: [{
+						color: '#50D775',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 24,
+						options: {
+
+						}
+					}]
+				}]
+			});
+		}
+
+
+
+
+
+
+		// number__of_customers
+
+		if($('#number__of_customers').length) {
+
+			const chartBox = document.querySelector('#number__of_customers .dashboard__chart_area_graph_inner');
+
+			const displayPercents = 54;
+
+			Highcharts.chart(chartBox, {
+
+				chart: {
+					type: 'solidgauge',
+					height: '100%',
+				},
+
+				credits: {
+					enabled: false
+				},
+
+				title: {
+					text: '',
+				},
+
+				tooltip: false,
+
+				pane: {
+					startAngle: 0,
+					endAngle: 360,
+					background: [{
+						outerRadius: '128%',
+						innerRadius: '0%',
+						backgroundColor: Highcharts.color('#EFF5FF').setOpacity(1).get(),
+						borderWidth: 0
+					}]
+				},
+
+				yAxis: {
+					min: 0,
+					max: 100,
+					lineWidth: 0,
+					tickPositions: []
+				},
+
+				plotOptions: {
+					solidgauge: {
+						dataLabels: {
+							enabled: true,
+							borderWidth: 0,
+							align: 'center',
+							x: 0,
+							y: -20,
+							format: `${displayPercents} %`,
+							color: '#1D92FF',
+							style: {
+								fontFamily: 'Poppins',
+								fontWeight: '700',
+								fontSize: '3.2rem',
+								textOutline: 'none',
+							},
+						},
+						linecap: 'round',
+						stickyTracking: false,
+						rounded: true
+					},
+
+					series: {
+						cursor: 'pointer',
+					}
+				},
+
+				series: [{
+					name: 'Average',
+					data: [{
+						color: '#F05555',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 100,
+					}],
+				}, {
+					name: 'Current',
+					data: [{
+						color: '#1D92FF',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 54,
+						options: {
+
+						}
+					}]
+				}]
+			});
+		}
+
+
+
+
+
+		// order__type_analysis
+
+		if($('#order__type_analysis').length) {
+
+			const chartBox = document.querySelector('#order__type_analysis .dashboard__chart_area_graph_inner');
+
+			const displayPercents = 32;
+
+			Highcharts.chart(chartBox, {
+
+				chart: {
+					type: 'solidgauge',
+					height: '100%',
+				},
+
+				credits: {
+					enabled: false
+				},
+
+				title: {
+					text: '',
+				},
+
+				tooltip: false,
+
+				pane: {
+					startAngle: 0,
+					endAngle: 360,
+					background: [{
+						outerRadius: '128%',
+						innerRadius: '0%',
+						backgroundColor: Highcharts.color('#EFF5FF').setOpacity(1).get(),
+						borderWidth: 0
+					}]
+				},
+
+				yAxis: {
+					min: 0,
+					max: 100,
+					lineWidth: 0,
+					tickPositions: []
+				},
+
+				plotOptions: {
+					solidgauge: {
+						dataLabels: {
+							enabled: true,
+							borderWidth: 0,
+							align: 'center',
+							x: 0,
+							y: -20,
+							format: `${displayPercents} %`,
+							color: '#1D92FF',
+							style: {
+								fontFamily: 'Poppins',
+								fontWeight: '700',
+								fontSize: '3.2rem',
+								textOutline: 'none',
+							},
+						},
+						linecap: 'round',
+						stickyTracking: false,
+						rounded: true
+					},
+
+					series: {
+						cursor: 'pointer',
+					}
+				},
+
+				series: [{
+					name: 'Average',
+					data: [{
+						color: '#61B3FF',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 100,
+					}],
+				}, {
+					name: 'Current',
+					data: [{
+						color: '#1D92FF',
+						radius: '116%',
+						innerRadius: '88%',
+						y: 32,
+						options: {
+
+						}
+					}]
+				}]
+			});
+		}
+
+
+
+
+
+
+		if($('.percent__pie').length) {
+
+			document.querySelectorAll('.percent__pie').forEach(pie => {
+				const percents = pie.getAttribute('data-pie-percent');
+				const pieColor = pie.getAttribute('data-pie-color');
+				const svg = pie.querySelector('svg');
+				const svgCircle = pie.querySelector('circle');
+				const text = pie.querySelector('.percent__pie_text');
+				const overlay = pie.querySelector('.percent__pie_overlay');
+
+				pie.style.width = `${percents}%`;
+				svg.setAttribute("viewBox", `0 0 ${percents * 2} ${percents * 2}`);
+				svgCircle.setAttribute('r', percents/2);
+				svgCircle.setAttribute('cx', percents);
+				svgCircle.setAttribute('cy', percents);
+				svgCircle.setAttribute('stroke', pieColor);
+				svgCircle.setAttribute('stroke-width', percents);
+				text.textContent = `${percents}%`;
+				overlay.style.backgroundColor = pieColor;
+
+
+				setTimeout(function() {
+					pie.classList.add('done');
+				}, 0);
+
+			});
+
+		}
+
+
+
+
+
+
+		/* ---------- Sales by Employee ---------- */
+
+		if($('#sales__by_employee').length) {
+			Highcharts.chart('sales__by_employee', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'James',
+					'Erdogan',
+					'Stephen',
+					'Freddie',
+					'William',
+					'Alex',
+					'James',
+					'Nicholas',
+					'William',
+					'James',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 0,
+					tickInterval: 100000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value/1000, 0) + "K";
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-weight: 300; text-align: center;">Total</span>',
+					footerFormat: '<span class="angle" style="background: #50D775;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#50D775',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 15;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 30,
+						maxPointWidth: 30,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [115000, 420000, 240000, 200000, 160000, 330000, 250000, 190000, 140000, 400000],
+					color: hexToRgbA('#50D775', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#50D775'
+						}
+					},
+				}
+				]
+			});
+		}
+
+
+
+		if($('#sales__by_employee_2').length) {
+			Highcharts.chart('sales__by_employee_2', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'James',
+					'Erdogan',
+					'Stephen',
+					'Freddie',
+					'William',
+					'Alex',
+					'James',
+					'Nicholas',
+					'William',
+					'James',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 0,
+					tickInterval: 100000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value/1000, 0) + "K";
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-weight: 300; text-align: center;">Total</span>',
+					footerFormat: '<span class="angle" style="background: #50D775;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#50D775',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 15;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 30,
+						maxPointWidth: 30,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [115000, 420000, 240000, 200000, 160000, 330000, 250000, 190000, 140000, 400000],
+					color: hexToRgbA('#50D775', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#50D775'
+						}
+					},
+				}
+				]
+			});
+		}
+
+		/* ---------- Sales by Employee ---------- */
+
+
+
+
+
+		/* ---------- Average Sales Price by Location ---------- */
+
+		if($('#average__sales_price_by_location').length) {
+			Highcharts.chart('average__sales_price_by_location', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'2010',
+					'2011',
+					'2012',
+					'2013',
+					'2014',
+					'2015',
+					'2016',
+					'2017',
+					'2018',
+					'2019',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 1000,
+					tickInterval: 200,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						// formatter: function() {
+		    //       if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value/1000, 0) + "K";
+		    //       return Highcharts.numberFormat(this.value,0);
+		    //     },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-weight: 300; text-align: center;">Total</span>',
+					footerFormat: '<span class="angle" style="background: #1D92FF;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#1D92FF',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 15;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 30,
+						maxPointWidth: 30,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [1080, 1150, 1200, 1300, 1370, 1390, 1400, 1500, 1600, 1800],
+					color: hexToRgbA('#1D92FF', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#1D92FF',
+						}
+					},
+				}
+				]
+			});
+		}
+
+
+		if($('#average__sales_price_by_location_2').length) {
+			Highcharts.chart('average__sales_price_by_location_2', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'2010',
+					'2011',
+					'2012',
+					'2013',
+					'2014',
+					'2015',
+					'2016',
+					'2017',
+					'2018',
+					'2019',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 1000,
+					tickInterval: 200,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						// formatter: function() {
+		    //       if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value/1000, 0) + "K";
+		    //       return Highcharts.numberFormat(this.value,0);
+		    //     },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-weight: 300; text-align: center;">Total</span>',
+					footerFormat: '<span class="angle" style="background: #1D92FF;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#1D92FF',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 15;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 30,
+						maxPointWidth: 30,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [1080, 1150, 1200, 1300, 1370, 1390, 1400, 1500, 1600, 1800],
+					color: hexToRgbA('#1D92FF', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#1D92FF',
+						}
+					},
+				}
+				]
+			});
+		}
+
+		/* ---------- Average Sales Price by Location ---------- */
+
+
+
+
+
+
+
+
+		/* ---------- Top Sales Period By Tailor ---------- */
+
+		if($('#top__sales_period_by_tailor').length) {
+			Highcharts.chart('top__sales_period_by_tailor', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'August 3rd, 2020',
+					'February 25th, 2019',
+					'April 18th, 2018',
+					'September 17th, 2017',
+					'August 13th, 2016',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 0,
+					tickInterval: 2000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value, 0);
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-size: 1rem; font-weight: 300; text-align: center;">Top Sales</span>',
+					footerFormat: '<span class="angle" style="background: #50D775;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#50D775',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 30;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 60,
+						maxPointWidth: 60,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [11000, 14000, 13800, 18000, 12000],
+					color: hexToRgbA('#50D775', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#50D775',
+						}
+					},
+				}
+				]
+			});
+		}
+
+
+
+		if($('#top__sales_period_by_tailor_2').length) {
+			Highcharts.chart('top__sales_period_by_tailor_2', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'August 3rd, 2020',
+					'February 25th, 2019',
+					'April 18th, 2018',
+					'September 17th, 2017',
+					'August 13th, 2016',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 0,
+					tickInterval: 2000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value, 0);
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-size: 1rem; font-weight: 300; text-align: center;">Top Sales</span>',
+					footerFormat: '<span class="angle" style="background: #50D775;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#50D775',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 30;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 60,
+						maxPointWidth: 60,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [11000, 14000, 13800, 18000, 12000],
+					color: hexToRgbA('#50D775', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#50D775',
+						}
+					},
+				}
+				]
+			});
+		}
+
+		/* ---------- Top Sales Period By Tailor ---------- */
+
+
+
+
+
+
+		
+
+
+		/* ---------- Top Sales Period By Company ---------- */
+
+		if($('#top__sales_period_by_company').length) {
+			Highcharts.chart('top__sales_period_by_company', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'Thusday <br/> August 3rd, 2020',
+					'Friday <br/> February 25th, 2019',
+					'Wednesday <br/> April 18th, 2018',
+					'Friday <br/> September 17th, 2017',
+					'Monday <br/> August 13th, 2016',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 40000,
+					tickInterval: 1000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value, 0);
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-size: 1rem; font-weight: 300; text-align: center;">Top Sales</span>',
+					footerFormat: '<span class="angle" style="background: #F58020;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#F58020',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 30;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 60,
+						maxPointWidth: 60,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [48500, 47500, 46500, 45500, 44500],
+					color: hexToRgbA('#F58020', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#F58020',
+						}
+					},
+				}
+				]
+			});
+		}
+
+
+
+
+		if($('#top__sales_period_by_company_2').length) {
+			Highcharts.chart('top__sales_period_by_company_2', {
+				chart: {
+					type: 'column',
+					height: 240,
+					style: {
+						fontFamily: 'Poppins',
+						fontSize: '1rem',
+						fontWeight: '600',
+					},
+				},
+				credits: {
+					enabled: false
+				},
+				title: {
+					text: ''
+				},
+				subtitle: {
+					text: ''
+				},
+				xAxis: {
+					categories: [
+					'Thusday <br/> August 3rd, 2020',
+					'Friday <br/> February 25th, 2019',
+					'Wednesday <br/> April 18th, 2018',
+					'Friday <br/> September 17th, 2017',
+					'Monday <br/> August 13th, 2016',
+					],
+					crosshair: true,
+					labels: {
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4'
+						}
+					},
+					crosshair: false,
+				},
+				yAxis: {
+					min: 40000,
+					tickInterval: 1000,
+					gridLineWidth: 0,
+					minorGridLineWidth: 0,
+					labels: {
+						formatter: function() {
+		          if ( this.value > 1000 ) return '£ ' + Highcharts.numberFormat( this.value, 0);
+		          return Highcharts.numberFormat(this.value,0);
+		        },
+						style: {
+							fontSize: '1rem',
+							fontWeight: '600',
+							color: '#848DA4',
+						},
+					},
+					title: {
+						text: ''
+					}
+				},
+				tooltip: {
+					valuePrefix: '£',
+					headerFormat: '',
+					pointFormat: '<strong style="font-size: 1.4rem">{point.y}</strong><br /><span style="display:block; font-size: 1rem; font-weight: 300; text-align: center;">Top Sales</span>',
+					footerFormat: '<span class="angle" style="background: #F58020;"></span>',
+					style: {
+						color: '#FFFFFF',
+						fontWeight: '600',
+					},
+					shared: true,
+					useHTML: true,
+					shadow: false,
+					borderRadius: 24,
+					backgroundColor: '#F58020',
+					positioner: function(labelWidth, labelHeight, point) {
+			        var tooltipX = point.plotX + 30;
+			        var tooltipY = point.plotY - 60;
+			        return {
+			            x: tooltipX,
+			            y: tooltipY
+			        };
+			    }
+				},
+				legend: false,
+				plotOptions: {
+					column: {
+						pointPadding: 0,
+						borderWidth: 0,
+						borderRadius: '0.8rem',
+						pointWidth: 60,
+						maxPointWidth: 60,
+						groupPadding: 0,
+					}
+				},
+				series: [{
+					name: 'Sales',
+					data: [48500, 47500, 46500, 45500, 44500],
+					color: hexToRgbA('#F58020', 0.4),
+					pointPlacement: 0,
+					states: {
+						hover: {
+							enabled: true,
+							color: '#F58020',
+						}
+					},
+				}
+				]
+			});
+		}
+
+		/* ---------- Top Sales Period By Tailor ---------- */
+
+
+
+
+
+
+
+
+
+		/* ---------- end all charts ---------- */
+
+
+
+
+
 
 
 
@@ -1058,8 +2524,8 @@
 
 		/* ---------- dashboard content tabs ---------- */
 
-		$('.dashboard__content_tabs li a').on('click', function() {
-			$('.dashboard__content_tabs li').stop().removeClass('active');
+		$('.dashboard__content_tabs .dashboard__content_tabs_list li a').on('click', function() {
+			$('.dashboard__content_tabs .dashboard__content_tabs_list li').stop().removeClass('active');
 			$(this).parent().stop().addClass('active');
 
 
@@ -1266,20 +2732,29 @@
 
 		/* ---------- dashboard content nested tabs ---------- */
 
-		$('.dashboard__content_nested_tabs li a').on('click', function() {
-			$('.dashboard__content_nested_tabs li').stop().removeClass('active');
-			$(this).parent().stop().addClass('active');
 
 
-			$(window).scrollTop(0);
+		$('.dashboard__content_nested_tabs').each(function(){
+			const $this = $(this);
+			const parentPanel = $this.parents('.dashboard__content_panel');
 
-			$('.dashboard__content_nested_panel').stop().removeClass('active');
-			if($('.dashboard__content_nested_panel')[$(this).parent().index()] !== undefined) {
-				$('.dashboard__content_nested_panel')[$(this).parent().index()].classList.add('active');
-			}
-			
+			$this.find('li a').on('click', function() {
+				$this.find('li').stop().removeClass('active');
+				$(this).parent().stop().addClass('active');
+
+
+				$(window).scrollTop(0);
+
+				parentPanel.find('.dashboard__content_nested_panel').stop().removeClass('active');
+				if(parentPanel.find('.dashboard__content_nested_panels .dashboard__content_nested_panel')[$(this).parent().index()] !== undefined) {
+					parentPanel.find('.dashboard__content_nested_panels .dashboard__content_nested_panel')[$(this).parent().index()].classList.add('active');
+				}
+
+
+			});
 
 		});
+
 
 		/* ---------- end dashboard content nested tabs ---------- */
 
@@ -1306,7 +2781,7 @@
 
 		setTimeout(function() {
 			$('[type="checkbox"], [type="radio"], select').styler();
-		}, 1000);
+		}, 100);
 		
 
 

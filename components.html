@@ -22,7 +22,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/slick.css" />
-	<!-- <link rel="stylesheet" href="css/dataTables.min.css" /> -->
+	<link rel="stylesheet" href="css/datepicker.css" />
 	<link rel="stylesheet" href="css/reset.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="stylesheet" href="css/responsive.css" />
@@ -143,7 +143,7 @@
 		<div class="dashboard__nav_inner">
 			<ul class="dashboard__menu">
 				<li class="active">
-					<a href="javascript:void(0);">
+					<a href="/">
 						<img src="img/nav-home-icon.svg" alt="home">
 					</a>
 				</li>
@@ -158,7 +158,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="javascript:void(0);">
+					<a href="notes.html">
 						<img src="img/nav-doc-icon.svg" alt="doc">
 					</a>
 				</li>
@@ -186,9 +186,24 @@
 			<li><a href="javascript:void(0);">Tasks</a></li>
 		</ul>
 
-		<a href="javascript:void(0);" class="event__btn settings">
-			<img src="img/settings-icon-alt.svg" alt="settings">
-		</a>
+		<div class="settings__wrapper settings">
+			<a href="javascript:void(0);" class="event__btn note__info_box_link">
+				<img src="img/settings-icon-alt.svg" alt="settings">
+			</a>
+
+			<div class="note__info_box">
+				<div class="note__info_box_inner">
+					<div class="note__info_box_inner_body">
+						<ul class="note__info_list">
+							<li><a href="widgets.html"><img src="img/edit-icon.svg" alt=""> Dashboard</a></li>
+							<li><a href="javascript:void(0);"><img src="img/edit-icon.svg" alt=""> Analytics</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		
 
 	</div>
 
@@ -693,6 +708,7 @@
 	<script src="js/highcharts-more.js"></script>
 	<script src="js/highcharts-solidgauge.js"></script>
 	<script src="js/moment.min.js"></script>
+	<script src="js/datepicker.min.js"></script>
 	<script src="js/custom.js"></script>
 </body>
 </html>

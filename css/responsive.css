@@ -119,6 +119,11 @@
 		right: 0;
 	}
 
+
+	.percent__pies {
+		width: 28vw;
+	}
+
 }
 
 
@@ -468,6 +473,67 @@
 
 	.dashboard__content_sides_area table {
 		min-width: 70rem;
+	}
+
+
+	.components__grid.columns-2 .dashboard__chart_area.presets .dashboard__chart_area_left {
+		width: 100%;
+	}
+
+	.dashboard__chart_area {
+		flex-direction: column;
+	}
+
+	.dashboard__chart_area_graph {
+		padding-left: 0;
+	}
+
+	.dashboard__chart_area_tables {
+		flex-direction: column;
+	}
+
+	.dashboard__chart_area_tables .table__wrapper {
+		margin: 0 0 2rem;
+		width: 100%;
+	}
+
+	.info__box_header_actions_list li {
+		margin: 0 0 1rem;
+	}
+
+	.info__box_header_actions_list {
+		align-items: flex-start;
+		flex-direction: column;
+		align-items: flex-start !important;
+		width: 100%;
+	}
+
+	.info__box_header_filters {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.percent__pies {
+		width: 60vw;
+		max-width: 22rem;
+	}
+
+	.dashboard__chart_area.columns .dashboard__chart_area_left {
+		width: 100%;
+		-webkit-box-ordinal-group:2;
+		-ms-flex-order:1;
+		order:1;
+	}
+
+	.dashboard__chart_area.columns .dashboard__chart_area_right {
+		width: 100%;
+		-webkit-box-ordinal-group:1;
+		-ms-flex-order:0;
+		order:0;
+	}
+
+	.dashboard__chart_area_total {
+		position: relative;
 	}
 		
 }
